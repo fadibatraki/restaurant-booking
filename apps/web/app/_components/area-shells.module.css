@@ -1,0 +1,483 @@
+.publicChrome,
+.areaChrome {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    padding: var(--space-4) 0 0;
+    background:
+        linear-gradient(180deg, rgba(255, 248, 243, 0.96) 0%, rgba(255, 248, 243, 0.82) 72%, rgba(255, 248, 243, 0) 100%);
+    backdrop-filter: blur(12px);
+}
+
+.areaChromeOwner {
+    position: static;
+    z-index: 20;
+    padding: 0;
+    background: transparent;
+    backdrop-filter: none;
+}
+
+.ownerHeader {
+    width: 100%;
+    padding-right: 296px;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.92);
+    background: rgba(255, 255, 255, 0.96);
+}
+
+.ownerHeaderInner {
+    min-height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.9rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+}
+
+.ownerHeaderNavWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+}
+
+.ownerHeaderNavWrap .navList {
+    width: auto;
+    justify-content: center;
+}
+
+.ownerHeaderActions {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+}
+
+.ownerNotificationsWrap {
+    position: relative;
+}
+
+.ownerNotificationBell {
+    position: relative;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(229, 231, 235, 0.95);
+    background: rgba(255, 255, 255, 0.98);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-soft);
+    color: var(--color-text-secondary);
+}
+
+.ownerNotificationBell:hover {
+    border-color: rgba(232, 93, 4, 0.28);
+    color: var(--color-primary-hover);
+    transform: translateY(-1px);
+}
+
+.ownerNotificationBellIcon {
+    font-size: 1.15rem;
+    line-height: 1;
+}
+
+.ownerNotificationBadge {
+    position: absolute;
+    top: -0.32rem;
+    right: -0.32rem;
+    min-width: 1.25rem;
+    height: 1.25rem;
+    border-radius: var(--radius-pill);
+    padding-inline: 0.28rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary);
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.ownerNotificationsPanel {
+    position: absolute;
+    top: calc(100% + 0.55rem);
+    left: 0;
+    width: min(90vw, 25rem);
+    max-height: min(70vh, 31rem);
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    border: 1px solid rgba(229, 231, 235, 0.92);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 22px 48px rgba(17, 17, 17, 0.16);
+    z-index: 80;
+}
+
+.ownerNotificationsPanelHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.9rem 0.95rem;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+.ownerNotificationsPanelTitle {
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.ownerNotificationsPanelHint {
+    color: var(--color-text-secondary);
+    font-size: 0.82rem;
+    margin-top: 0.15rem;
+}
+
+.ownerNotificationsReadAllButton {
+    min-height: 2rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(232, 93, 4, 0.18);
+    background: rgba(232, 93, 4, 0.11);
+    color: var(--color-primary-hover);
+    font-size: 0.77rem;
+    font-weight: 700;
+}
+
+.ownerNotificationsReadAllButton:disabled {
+    opacity: 0.55;
+    cursor: default;
+}
+
+.ownerNotificationsList {
+    max-height: 100%;
+    overflow: auto;
+    display: grid;
+    gap: 0.55rem;
+    padding: 0.75rem;
+}
+
+.ownerNotificationsState,
+.ownerNotificationsStateError {
+    border: 1px dashed rgba(209, 213, 219, 0.9);
+    border-radius: var(--radius-md);
+    background: rgba(249, 250, 251, 0.75);
+    padding: 0.9rem;
+    text-align: right;
+    color: var(--color-text-secondary);
+    font-size: 0.88rem;
+}
+
+.ownerNotificationsStateError {
+    border-color: rgba(220, 38, 38, 0.25);
+    color: var(--color-error);
+    background: rgba(254, 242, 242, 0.9);
+}
+
+.ownerNotificationItem {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    text-align: right;
+    border: 1px solid rgba(229, 231, 235, 0.9);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.98);
+    padding: 0.72rem;
+}
+
+.ownerNotificationItem:hover {
+    border-color: rgba(232, 93, 4, 0.22);
+    transform: translateY(-1px);
+}
+
+.ownerNotificationItemUnread {
+    border-color: rgba(232, 93, 4, 0.36);
+    background: rgba(255, 249, 245, 0.95);
+}
+
+.ownerNotificationToneDot {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 999px;
+    flex-shrink: 0;
+    margin-top: 0.42rem;
+}
+
+.notificationTonePrimary {
+    background: var(--color-primary);
+}
+
+.notificationToneSuccess {
+    background: var(--color-success);
+}
+
+.notificationToneWarning {
+    background: #d97706;
+}
+
+.notificationToneError {
+    background: var(--color-error);
+}
+
+.ownerNotificationItemContent {
+    min-width: 0;
+    display: grid;
+    gap: 0.2rem;
+    width: 100%;
+}
+
+.ownerNotificationItemContent strong {
+    color: var(--color-text);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    font-weight: 800;
+}
+
+.ownerNotificationItemContent span {
+    color: var(--color-text-secondary);
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.ownerNotificationItemContent small {
+    color: #8b93a5;
+    font-size: 0.73rem;
+    line-height: 1.3;
+}
+
+.publicChromeInner,
+.areaChromeInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: 0.9rem 1rem;
+    border: 1px solid rgba(229, 231, 235, 0.9);
+    border-radius: var(--radius-xl);
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: var(--shadow-soft);
+}
+
+.areaChromeInner {
+    width: calc(100% - 2rem);
+    margin-inline: auto;
+}
+
+.areaChromeInnerOwner {
+    width: auto;
+    min-height: 4.5rem;
+    margin: 0 calc(clamp(22rem, 28vw, 24rem) + 1rem) 0 0;
+    padding: 0.75rem 1.5rem;
+    border: 0;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.92);
+    border-radius: 0 0 0 1.6rem;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: none;
+    justify-content: center;
+}
+
+.brandBlock,
+.areaIdentity {
+    display: grid;
+    gap: 0.1rem;
+}
+
+.brandLabel,
+.areaLabel {
+    color: var(--color-text);
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+
+.brandHint,
+.areaHint {
+    color: var(--color-text-secondary);
+    font-size: 0.84rem;
+}
+
+.navList {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.areaNavGroup {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+}
+
+.areaNavGroupOwner {
+    width: 100%;
+    justify-content: center;
+}
+
+.ownerContentOffset {
+    padding-top: 0.85rem;
+}
+
+.navLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.5rem;
+    padding: 0.55rem 0.95rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.52);
+    color: var(--color-text-secondary);
+    font-size: 0.94rem;
+    font-weight: 700;
+    transition:
+        background var(--transition-base),
+        color var(--transition-base),
+        border-color var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.logoutButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.5rem;
+    padding: 0.55rem 0.95rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(229, 231, 235, 0.9);
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--color-text);
+    font-size: 0.94rem;
+    font-weight: 700;
+}
+
+.logoutForm {
+    display: flex;
+    align-items: center;
+}
+
+.navLink:hover {
+    background: rgba(232, 93, 4, 0.08);
+    border-color: rgba(232, 93, 4, 0.14);
+}
+
+.navLinkActive {
+    background: rgba(232, 93, 4, 0.12);
+    border-color: rgba(232, 93, 4, 0.2);
+    box-shadow: inset 0 0 0 1px rgba(232, 93, 4, 0.08);
+    color: var(--color-primary-hover);
+}
+
+.contentOffset {
+    padding-top: var(--space-5);
+}
+
+@media (max-width: 920px) {
+
+    .publicChromeInner,
+    .areaChromeInner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .navList {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .areaNavGroup {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .areaChromeInnerOwner {
+        margin: 0 5rem 0 0;
+        padding: 0.7rem 1rem;
+        border-radius: 0 0 0 1.2rem;
+    }
+
+    .ownerHeader {
+        padding-right: 6rem;
+    }
+
+    .ownerHeaderInner {
+        min-height: 4rem;
+        padding: 0.65rem 0.85rem;
+    }
+
+    .areaNavGroupOwner {
+        justify-content: center;
+    }
+
+    .ownerNotificationsPanel {
+        width: min(92vw, 23rem);
+    }
+}
+
+@media (max-width: 640px) {
+
+    .publicChrome,
+    .areaChrome {
+        padding-top: var(--space-3);
+    }
+
+    .publicChromeInner,
+    .areaChromeInner {
+        padding: 0.8rem;
+    }
+
+    .areaChromeInner {
+        width: calc(100% - 1.25rem);
+    }
+
+    .areaChromeInnerOwner {
+        margin: 0 4.625rem 0 0;
+        padding: 0.65rem 0.8rem;
+        border-radius: 0 0 0 1rem;
+    }
+
+    .ownerHeader {
+        padding-right: 5.5rem;
+    }
+
+    .ownerHeaderInner {
+        min-height: 3.75rem;
+        padding: 0.55rem 0.7rem;
+    }
+
+    .navList {
+        gap: 0.4rem;
+    }
+
+    .navLink {
+        min-height: 2.3rem;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.88rem;
+    }
+
+    .logoutButton {
+        min-height: 2.3rem;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.88rem;
+    }
+
+    .ownerNotificationBell {
+        width: 2.45rem;
+        height: 2.45rem;
+    }
+
+    .ownerNotificationsPanel {
+        width: min(96vw, 21rem);
+        left: -0.2rem;
+    }
+}

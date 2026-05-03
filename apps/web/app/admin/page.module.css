@@ -1,0 +1,626 @@
+.page {
+    padding: var(--space-5) 0 var(--space-12);
+}
+
+.stack {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.topBar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+}
+
+.backLink {
+    width: fit-content;
+    min-height: 2.5rem;
+    padding: 0.5rem 0.95rem;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+    gap: var(--space-4);
+    padding: clamp(1.1rem, 2.8vw, 1.7rem);
+    align-items: start;
+}
+
+.heroContent {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    min-height: 2rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: var(--radius-pill);
+    background: rgba(232, 93, 4, 0.12);
+    color: var(--color-primary-hover);
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.heroHeading {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.heroHeading h1 {
+    font-size: clamp(2rem, 3vw, 2.95rem);
+}
+
+.heroHeading p {
+    max-width: 48rem;
+    font-size: 0.98rem;
+}
+
+.heroActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+}
+
+.heroAside {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+    padding: var(--space-4);
+    align-self: stretch;
+}
+
+.viewNav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+}
+
+.viewLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.5rem;
+    padding: 0.55rem 1rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(229, 231, 235, 0.9);
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--color-text);
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.viewLinkActive {
+    background: rgba(232, 93, 4, 0.12);
+    border-color: rgba(232, 93, 4, 0.2);
+    color: var(--color-primary-hover);
+}
+
+.metaCard {
+    display: grid;
+    gap: 0.25rem;
+    padding: 0.9rem 0.95rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+.metaCard dt {
+    color: var(--color-text);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.metaCard dd {
+    color: var(--color-text);
+    font-size: 0.98rem;
+    font-weight: 600;
+}
+
+.summaryGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-4);
+}
+
+.metricCard {
+    display: grid;
+    gap: 0.35rem;
+    padding: var(--space-4);
+}
+
+.metricEyebrow {
+    color: var(--color-text-secondary);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.metricValue {
+    color: var(--color-text);
+    font-size: clamp(2rem, 3vw, 2.7rem);
+    line-height: 1;
+}
+
+.metricLabel {
+    font-size: 0.94rem;
+}
+
+.dashboardGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+    gap: var(--space-4);
+    align-items: start;
+}
+
+.mainStack,
+.asideStack {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.sectionCard {
+    display: grid;
+    gap: var(--space-4);
+    padding: clamp(1rem, 2vw, 1.35rem);
+}
+
+.sectionHeading {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.sectionHeading p {
+    font-size: 0.94rem;
+}
+
+.actionGrid,
+.previewGrid,
+.previewList {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.actionGrid,
+.previewGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.actionCard,
+.previewCard {
+    display: grid;
+    gap: var(--space-3);
+    padding: var(--space-4);
+}
+
+.actionCard {
+    text-decoration: none;
+}
+
+.actionCopy {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.actionLabel,
+.previewTitle {
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.actionText,
+.previewHint,
+.previewMeta,
+.actionFooter {
+    color: var(--color-text-secondary);
+    font-size: 0.92rem;
+}
+
+.actionFooter {
+    font-weight: 700;
+}
+
+.inlineSummaryGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-3);
+}
+
+.inlineSummaryCard {
+    display: grid;
+    gap: 0.35rem;
+    padding: 0.95rem 1rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 248, 243, 0.78);
+    border: 1px solid rgba(253, 186, 116, 0.24);
+}
+
+.inlineSummaryCard span {
+    color: var(--color-text-secondary);
+    font-size: 0.82rem;
+}
+
+.inlineSummaryCard strong {
+    color: var(--color-text);
+    font-size: 1.4rem;
+}
+
+.invitationManagementGrid {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
+    gap: var(--space-4);
+}
+
+.invitationPanel {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.inviteForm {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.inviteFieldGroup {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.inviteFieldGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+}
+
+.formError,
+.formSuccess,
+.copyFeedback {
+    font-size: 0.9rem;
+}
+
+.formError {
+    color: var(--color-error);
+}
+
+.formSuccess,
+.copyFeedback {
+    color: var(--color-success);
+}
+
+.generatedLinkCard,
+.invitationLinkField {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.generatedLinkCard {
+    padding: 0.95rem 1rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 248, 243, 0.78);
+    border: 1px solid rgba(253, 186, 116, 0.24);
+}
+
+.generatedLinkLabel {
+    color: var(--color-text);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.formActionsInline {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.invitationList {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.invitationCard {
+    display: grid;
+    gap: var(--space-3);
+    padding: var(--space-4);
+}
+
+.invitationCardTop {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-4);
+}
+
+.invitationIdentity {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.invitationIdentity h3 {
+    font-size: 1.1rem;
+}
+
+.pendingBadge {
+    background: rgba(232, 93, 4, 0.12);
+    border-color: rgba(232, 93, 4, 0.18);
+    color: var(--color-primary-hover);
+}
+
+.acceptedBadge {
+    background: rgba(22, 163, 74, 0.12);
+    border-color: rgba(22, 163, 74, 0.18);
+    color: var(--color-success);
+}
+
+.expiredBadge {
+    background: rgba(107, 114, 128, 0.12);
+    border-color: rgba(107, 114, 128, 0.18);
+    color: var(--color-text-secondary);
+}
+
+.entityList,
+.accountList {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.entityCard,
+.accountCard {
+    display: grid;
+    gap: var(--space-3);
+    padding: var(--space-4);
+}
+
+.entityHeader,
+.accountHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-4);
+}
+
+.entityIdentity,
+.accountIdentity {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.entityIdentity h3,
+.accountIdentity h3 {
+    font-size: 1.2rem;
+}
+
+.entitySignals {
+    display: grid;
+    gap: var(--space-2);
+    justify-items: end;
+}
+
+.cardEyebrow {
+    color: var(--color-primary-hover);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.signalPill,
+.roleBadge,
+.linkedChip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.82rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.roleBadge {
+    border: 1px solid transparent;
+}
+
+.superAdminBadge {
+    background: rgba(232, 93, 4, 0.12);
+    border-color: rgba(232, 93, 4, 0.18);
+    color: var(--color-primary-hover);
+}
+
+.restaurantAdminBadge,
+.restaurantBadge {
+    background: rgba(22, 163, 74, 0.12);
+    border-color: rgba(22, 163, 74, 0.18);
+    color: var(--color-success);
+}
+
+.customerBadge {
+    background: rgba(107, 114, 128, 0.12);
+    border-color: rgba(107, 114, 128, 0.18);
+    color: var(--color-text-secondary);
+}
+
+.infoGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+}
+
+.infoItem {
+    display: grid;
+    gap: 0.25rem;
+    padding: 0.85rem 0.95rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.74);
+    border: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+.infoItem dt {
+    color: var(--color-text);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.infoItem dd {
+    color: var(--color-text-secondary);
+    font-size: 0.94rem;
+    word-break: break-word;
+}
+
+.cardActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    align-items: center;
+}
+
+.actionHint,
+.roleHint {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+.roleLegend,
+.linkedList,
+.actionStack,
+.checkList,
+.inviteFlow {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.roleLegend {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.linkedList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.linkedChip {
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(229, 231, 235, 0.82);
+    color: var(--color-text);
+}
+
+.stepCard {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-3);
+    padding: 0.95rem 1rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 248, 243, 0.78);
+    border: 1px solid rgba(253, 186, 116, 0.24);
+}
+
+.stepCard h3 {
+    font-size: 1rem;
+}
+
+.stepNumber {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: rgba(232, 93, 4, 0.12);
+    color: var(--color-primary-hover);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.placeholderNote {
+    padding: 0.95rem 1rem;
+    border-radius: var(--radius-md);
+    background: rgba(17, 17, 17, 0.03);
+    border: 1px dashed rgba(107, 114, 128, 0.35);
+    color: var(--color-text-secondary);
+    font-size: 0.92rem;
+}
+
+.checkItem {
+    padding: 0.85rem 0.95rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 248, 243, 0.78);
+    border: 1px solid rgba(253, 186, 116, 0.22);
+    color: var(--color-text);
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.stateCard {
+    display: grid;
+    gap: var(--space-3);
+    padding: clamp(1rem, 2vw, 1.3rem);
+}
+
+.stateEyebrow {
+    color: var(--color-primary-hover);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.stateActions {
+    display: flex;
+    gap: var(--space-3);
+}
+
+@media (max-width: 1040px) {
+
+    .summaryGrid,
+    .inlineSummaryGrid,
+    .actionGrid,
+    .previewGrid,
+    .infoGrid,
+    .inviteFieldGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboardGrid,
+    .hero,
+    .invitationManagementGrid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 720px) {
+
+    .summaryGrid,
+    .inlineSummaryGrid,
+    .actionGrid,
+    .previewGrid,
+    .infoGrid,
+    .heroAside,
+    .inviteFieldGrid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .entityHeader,
+    .accountHeader,
+    .cardActions,
+    .invitationCardTop {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .entitySignals {
+        justify-items: start;
+    }
+}

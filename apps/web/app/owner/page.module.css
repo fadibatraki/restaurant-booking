@@ -1,0 +1,3462 @@
+.page {
+    padding: var(--space-5) 0 var(--space-12);
+}
+
+.stack {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    gap: var(--space-4);
+    padding: clamp(1.1rem, 2.8vw, 1.6rem);
+    align-items: start;
+}
+
+.heroContent {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.heroHeading {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.heroHeading h1 {
+    font-size: clamp(2rem, 3vw, 2.85rem);
+}
+
+.heroHeading p {
+    max-width: 48rem;
+    font-size: 0.98rem;
+}
+
+.heroAside {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+    padding: var(--space-4);
+    align-self: stretch;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    min-height: 2rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: var(--radius-pill);
+    background: rgba(22, 163, 74, 0.12);
+    color: var(--color-success);
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.metaCard {
+    display: grid;
+    gap: 0.25rem;
+    padding: 0.85rem 0.95rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.74);
+    border: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+.metaCard dt {
+    color: var(--color-text);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.metaCard dd {
+    color: var(--color-text);
+    font-size: 0.98rem;
+    font-weight: 600;
+}
+
+.viewNav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.viewLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.45rem;
+    padding: 0.5rem 0.95rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.viewLinkActive {
+    border-color: rgba(232, 93, 4, 0.3);
+    background: rgba(232, 93, 4, 0.12);
+    color: var(--color-primary-hover);
+}
+
+.summaryGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-4);
+}
+
+.metricCard {
+    display: grid;
+    gap: 0.35rem;
+    padding: var(--space-4);
+}
+
+.metricEyebrow {
+    color: var(--color-text-secondary);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.metricValue {
+    color: var(--color-text);
+    font-size: clamp(2rem, 3vw, 2.7rem);
+    line-height: 1;
+}
+
+.metricLabel {
+    font-size: 0.94rem;
+}
+
+.dashboardGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.18fr) minmax(290px, 0.82fr);
+    gap: var(--space-4);
+    align-items: start;
+}
+
+.mainStack,
+.asideStack,
+.tableSections {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.sectionCard {
+    display: grid;
+    gap: var(--space-4);
+    padding: clamp(1rem, 2vw, 1.35rem);
+}
+
+.sectionHeading {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.sectionHeading p {
+    font-size: 0.94rem;
+}
+
+.accountSummaryGrid,
+.infoGrid,
+.tableMetaGrid,
+.reservationMetaGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+}
+
+.infoItem {
+    display: grid;
+    gap: 0.25rem;
+    padding: 0.8rem 0.9rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.56);
+    border: 1px solid rgba(229, 231, 235, 0.68);
+}
+
+.infoItem dt {
+    color: var(--color-text);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.infoItem dd {
+    color: var(--color-text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
+.quickGrid,
+.previewList,
+.actionGrid,
+.restaurantList,
+.tablesList,
+.reservationsList {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.quickGrid,
+.actionGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.quickCard,
+.previewCard,
+.actionCard,
+.restaurantCard,
+.tableSection,
+.tableCard,
+.reservationCard,
+.tableFormCard {
+    display: grid;
+    gap: var(--space-3);
+    padding: var(--space-4);
+}
+
+.quickTop,
+.previewTop,
+.restaurantHeader,
+.tableHeader,
+.tableCardTop,
+.reservationTop {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-4);
+}
+
+.previewPrimary,
+.restaurantIdentity,
+.tableCardPrimary,
+.reservationPrimary,
+.actionCopy {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.cardEyebrow {
+    color: var(--color-primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.quickTitle,
+.restaurantTitle {
+    font-size: 1.18rem;
+}
+
+.previewTitle,
+.tableName,
+.reservationId,
+.actionLabel {
+    color: var(--color-text);
+    font-size: 0.98rem;
+    font-weight: 700;
+}
+
+.restaurantDescription,
+.previewHint,
+.actionText,
+.tableMetaText,
+.reservationDate,
+.previewMeta {
+    font-size: 0.92rem;
+}
+
+.quickMeta,
+.restaurantSignals,
+.reservationKeyline,
+.stateActions,
+.filterActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+}
+
+.restaurantSignals {
+    justify-content: flex-end;
+}
+
+.statusBadge,
+.restaurantSignal,
+.tableCount,
+.capacityBadge,
+.inlineStatusBadge,
+.reservationGuests,
+.statusBadgeAlt,
+.previewStatus,
+.actionFooter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 1.95rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.78rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.statusBadge,
+.tableCount,
+.inlineStatusActive {
+    background: rgba(22, 163, 74, 0.12);
+    color: var(--color-success);
+}
+
+.restaurantSignal,
+.statusBadgeAlt,
+.actionFooter {
+    background: rgba(255, 255, 255, 0.74);
+    border: 1px solid rgba(229, 231, 235, 0.82);
+    color: var(--color-text-secondary);
+}
+
+.capacityBadge,
+.previewStatus,
+.filterChipActive {
+    background: rgba(232, 93, 4, 0.1);
+    color: var(--color-primary-hover);
+}
+
+.inlineStatusMuted {
+    background: rgba(107, 114, 128, 0.12);
+    color: var(--color-text-secondary);
+}
+
+.actionCard {
+    align-content: space-between;
+}
+
+.reservationKeyline,
+.filterActions {
+    align-items: center;
+}
+
+.reservationGuests {
+    background: rgba(232, 93, 4, 0.08);
+    color: var(--color-primary-hover);
+}
+
+.reservationNotesBlock {
+    display: grid;
+    padding: 0.85rem 0.95rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 248, 243, 0.72);
+    border: 1px solid rgba(253, 186, 116, 0.24);
+}
+
+.filterBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: 0.75rem 0.9rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.56);
+    border: 1px solid rgba(229, 231, 235, 0.75);
+}
+
+.filterLabel {
+    color: var(--color-text);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.filterChip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.2rem;
+    padding: 0.5rem 0.85rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    background: var(--color-surface);
+    color: var(--color-text-secondary);
+    font-size: 0.86rem;
+    font-weight: 600;
+}
+
+.historyFilterTabs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    padding: 0.35rem;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 248, 241, 0.9);
+    border: 1px solid rgba(232, 93, 4, 0.14);
+}
+
+.historyFilterTab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.36rem;
+    padding: 0.52rem 1rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--color-text-secondary);
+    font-size: 0.87rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.historyFilterTab:hover {
+    background: rgba(255, 255, 255, 0.84);
+    color: var(--color-primary-hover);
+    border-color: rgba(232, 93, 4, 0.16);
+    transform: translateY(-1px);
+}
+
+.historyFilterTabActive {
+    border-color: rgba(232, 93, 4, 0.32);
+    background: rgba(232, 93, 4, 0.14);
+    color: var(--color-primary-hover);
+    box-shadow: 0 8px 16px rgba(232, 93, 4, 0.12);
+}
+
+.historyList {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.historyEvent {
+    display: grid;
+    grid-template-columns: 1.25rem minmax(0, 1fr);
+    gap: 0.85rem;
+    align-items: stretch;
+}
+
+.historyEventRail {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.historyEventLine {
+    position: absolute;
+    inset-block: -0.6rem -0.6rem;
+    width: 2px;
+    border-radius: var(--radius-pill);
+    background: linear-gradient(180deg, rgba(229, 231, 235, 0.35), rgba(229, 231, 235, 0.92), rgba(229, 231, 235, 0.35));
+}
+
+.historyEvent:last-child .historyEventLine {
+    inset-block-end: 1.35rem;
+}
+
+.historyEventDot {
+    position: relative;
+    z-index: 1;
+    width: 0.76rem;
+    height: 0.76rem;
+    border-radius: 999px;
+    margin-top: 1.05rem;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.96);
+}
+
+.historyEventDotCancelled {
+    background: rgba(220, 38, 38, 0.75);
+}
+
+.historyEventDotPending {
+    background: rgba(232, 93, 4, 0.72);
+}
+
+.historyEventDotConfirmed {
+    background: rgba(22, 163, 74, 0.75);
+}
+
+.historyRow {
+    display: grid;
+    gap: 0.62rem;
+    padding: 1rem 1.05rem;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.9));
+    border: 1px solid rgba(229, 231, 235, 0.86);
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    cursor: pointer;
+}
+
+.historyRow:hover {
+    transform: translateY(-2px);
+    border-color: rgba(232, 93, 4, 0.2);
+    box-shadow: 0 16px 28px rgba(15, 23, 42, 0.1);
+}
+
+.historyRowTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.65rem;
+}
+
+.historyRestaurantName {
+    color: var(--color-text);
+    font-size: 1.05rem;
+    font-weight: 900;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+}
+
+.historyDateTime {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.45;
+}
+
+.historyRowInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+}
+
+.historyGuestsChip,
+.historyStatusChip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 1.95rem;
+    padding: 0.32rem 0.72rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.78rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.historyGuestsChip {
+    color: #9a4f1a;
+    background: rgba(232, 93, 4, 0.1);
+}
+
+.historyStatusChip {
+    gap: 0.26rem;
+    font-weight: 800;
+    border: 1px solid transparent;
+}
+
+.historyStatusIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 0.95rem;
+    height: 0.95rem;
+    font-size: 0.72rem;
+    line-height: 1;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.historyStatusCancelled {
+    color: var(--color-error);
+    background: rgba(220, 38, 38, 0.15);
+    border-color: rgba(220, 38, 38, 0.24);
+}
+
+.historyStatusPending {
+    color: #c54f05;
+    background: rgba(232, 93, 4, 0.14);
+    border-color: rgba(232, 93, 4, 0.24);
+}
+
+.historyStatusConfirmed {
+    color: var(--color-success);
+    background: rgba(22, 163, 74, 0.15);
+    border-color: rgba(22, 163, 74, 0.24);
+}
+
+.historyReservationRef {
+    color: #8a93a3;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.historyNotes {
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.55;
+    padding: 0.65rem 0.75rem;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 248, 243, 0.8);
+    border: 1px solid rgba(253, 186, 116, 0.22);
+}
+
+.stateCard {
+    display: grid;
+    gap: var(--space-4);
+    padding: clamp(1.1rem, 2.4vw, 1.5rem);
+    justify-items: start;
+}
+
+.stateEyebrow {
+    color: var(--color-primary);
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.skeletonLine,
+.skeletonBlock {
+    border-radius: var(--radius-sm);
+    background: linear-gradient(90deg,
+            rgba(229, 231, 235, 0.85) 0%,
+            rgba(254, 241, 232, 0.9) 50%,
+            rgba(229, 231, 235, 0.85) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s linear infinite;
+}
+
+.skeletonBackLink {
+    width: 9rem;
+    height: 2.75rem;
+}
+
+.skeletonEyebrow {
+    width: 10rem;
+    height: 2rem;
+}
+
+.skeletonTitle {
+    width: min(24rem, 75%);
+    height: 3.25rem;
+}
+
+.skeletonText {
+    width: min(28rem, 100%);
+    height: 1rem;
+}
+
+.skeletonStat {
+    width: 100%;
+    height: 4.5rem;
+}
+
+.skeletonPanel {
+    width: 100%;
+    height: 9rem;
+}
+
+.skeletonReservation {
+    width: 100%;
+    height: 13rem;
+}
+
+/* Premium Dashboard Styles */
+
+.dashboardHero {
+    padding: clamp(1.5rem, 3vw, 2rem);
+}
+
+.heroContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+}
+
+.heroIdentity {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.heroTitle {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.2;
+}
+
+.heroDescription {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+.heroMeta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.heroBadge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-pill);
+    background: rgba(232, 93, 4, 0.08);
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.metricsRow {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-4);
+}
+
+.sectionTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.detailsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+}
+
+.detailItem {
+    display: grid;
+    gap: 0.375rem;
+}
+
+.detailItem dt {
+    color: var(--color-text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.detailItem dd {
+    color: var(--color-text);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+}
+
+.emptyState {
+    display: grid;
+    gap: 0.5rem;
+    padding: var(--space-6) var(--space-4);
+    text-align: center;
+}
+
+.emptyStateLabel {
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    font-weight: 600;
+}
+
+.emptyStateHint {
+    color: var(--color-text-tertiary);
+    font-size: 0.875rem;
+}
+
+.reservationsList {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.reservationItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: 0.875rem 0;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.reservationItem:last-child {
+    border-bottom: none;
+}
+
+.reservationMain {
+    display: grid;
+    gap: 0.25rem;
+    flex: 1;
+}
+
+.reservationDate {
+    color: var(--color-text);
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+.reservationMeta {
+    color: var(--color-text-secondary);
+    font-size: 0.8125rem;
+}
+
+.reservationBadge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.75rem;
+    padding: 0.375rem 0.75rem;
+    border-radius: var(--radius-sm);
+    background: rgba(229, 231, 235, 0.4);
+    color: var(--color-text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+@keyframes shimmer {
+    from {
+        background-position: 200% 0;
+    }
+
+    to {
+        background-position: -200% 0;
+    }
+}
+
+/* ===========================
+   Owner Reservations Calendar
+   =========================== */
+
+.ownerCalendarShell {
+    display: grid;
+    gap: var(--space-4);
+    margin-top: var(--space-3);
+}
+
+.ownerCalendarTopbar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    background:
+        radial-gradient(circle at top right, rgba(232, 93, 4, 0.12), transparent 34%),
+        rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(229, 231, 235, 0.82);
+}
+
+.ownerCalendarTitleBlock {
+    display: grid;
+    gap: 0.25rem;
+}
+
+.ownerCalendarEyebrow {
+    color: var(--color-primary);
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.ownerCalendarTitleBlock h3 {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 1.45rem;
+    font-weight: 900;
+}
+
+.ownerCalendarTitleBlock p {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.ownerCalendarStats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: var(--space-2);
+}
+
+.ownerCalendarStats span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(229, 231, 235, 0.9);
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.ownerCalendarToolbar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0.7rem;
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(229, 231, 235, 0.78);
+}
+
+.ownerCalendarNavButton,
+.ownerCalendarTodayButton,
+.ownerCalendarCreateButton {
+    min-height: 2.55rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(229, 231, 235, 0.9);
+    background: white;
+    color: var(--color-text);
+    font-size: 0.85rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.ownerCalendarTodayButton,
+.ownerCalendarCreateButton {
+    border-color: rgba(232, 93, 4, 0.28);
+    background: rgba(232, 93, 4, 0.1);
+    color: var(--color-primary-hover);
+}
+
+.ownerCalendarCreateButton {
+    margin-inline-start: auto;
+}
+
+.ownerCalendarCreateButton:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.ownerCalendarScroll {
+    overflow-x: auto;
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(229, 231, 235, 0.85);
+    background: white;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.ownerCalendarGrid {
+    min-width: 1080px;
+    display: grid;
+    grid-template-columns: 4.5rem repeat(7, minmax(8.5rem, 1fr));
+    grid-template-rows: 4.7rem repeat(var(--calendar-hours, 15), minmax(7.5rem, auto));
+    background: rgba(229, 231, 235, 0.72);
+    gap: 1px;
+}
+
+.ownerCalendarCorner,
+.ownerCalendarDayHeader,
+.ownerCalendarTimeCell,
+.ownerCalendarSlot {
+    background: rgba(255, 255, 255, 0.96);
+}
+
+.ownerCalendarCorner {
+    position: sticky;
+    right: 0;
+    z-index: 4;
+    display: grid;
+    place-items: center;
+    color: var(--color-text-secondary);
+    font-size: 0.78rem;
+    font-weight: 900;
+    background: rgba(249, 250, 251, 0.98);
+}
+
+.ownerCalendarDayHeader {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    gap: 0.2rem;
+    padding: 0.75rem;
+    text-align: center;
+    border-bottom: 2px solid rgba(229, 231, 235, 0.72);
+}
+
+.ownerCalendarDayHeader strong {
+    color: var(--color-text);
+    font-size: 0.98rem;
+    font-weight: 900;
+}
+
+.ownerCalendarDayHeader span {
+    color: var(--color-text-secondary);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.ownerCalendarDayHeaderToday {
+    background: linear-gradient(180deg, rgba(255, 247, 237, 1), rgba(255, 255, 255, 0.96));
+    box-shadow: inset 0 -3px 0 rgba(232, 93, 4, 0.7);
+}
+
+.ownerCalendarTimeCell {
+    position: sticky;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 0.8rem;
+    background: rgba(249, 250, 251, 0.98);
+    color: var(--color-text-secondary);
+    font-size: 0.76rem;
+    font-weight: 900;
+}
+
+.ownerCalendarSlot {
+    position: relative;
+    min-height: 7.5rem;
+    padding: 0.55rem;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(250, 250, 250, 0.92));
+}
+
+.ownerCalendarSlot:hover {
+    background: rgba(255, 248, 243, 0.8);
+}
+
+.ownerCalendarEmptySlot {
+    width: 100%;
+    height: 100%;
+    min-height: 6.3rem;
+    border: 1px dashed transparent;
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: transparent;
+    cursor: not-allowed;
+}
+
+.ownerCalendarSlot:hover .ownerCalendarEmptySlot {
+    border-color: rgba(232, 93, 4, 0.28);
+    background: rgba(232, 93, 4, 0.04);
+    color: rgba(232, 93, 4, 0.5);
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+.ownerCalendarReservationStack {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.ownerCalendarReservationCard {
+    display: grid;
+    gap: 0.55rem;
+    padding: 0.75rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(229, 231, 235, 0.9);
+    background: white;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    overflow: hidden;
+}
+
+.ownerCalendarReservationPENDING {
+    background: linear-gradient(180deg, rgba(255, 251, 235, 1), rgba(254, 243, 199, 0.82));
+    border-color: rgba(245, 158, 11, 0.36);
+}
+
+.ownerCalendarReservationCONFIRMED {
+    background: linear-gradient(180deg, rgba(240, 253, 244, 1), rgba(220, 252, 231, 0.82));
+    border-color: rgba(22, 163, 74, 0.32);
+}
+
+.ownerCalendarReservationCANCELLED {
+    background: linear-gradient(180deg, rgba(249, 250, 251, 1), rgba(243, 244, 246, 0.88));
+    border-color: rgba(156, 163, 175, 0.34);
+    opacity: 0.72;
+}
+
+.ownerCalendarReservationCOMPLETED {
+    background: linear-gradient(180deg, rgba(239, 246, 255, 1), rgba(219, 234, 254, 0.85));
+    border-color: rgba(59, 130, 246, 0.32);
+}
+
+.ownerCalendarReservationHead {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.ownerCalendarReservationHead span {
+    color: var(--color-text);
+    font-size: 0.78rem;
+    font-weight: 900;
+}
+
+.ownerCalendarReservationHead b {
+    padding: 0.22rem 0.55rem;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--color-text-secondary);
+    font-size: 0.68rem;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.ownerCalendarReservationBody {
+    display: grid;
+    gap: 0.2rem;
+}
+
+.ownerCalendarReservationBody strong {
+    color: var(--color-text);
+    font-size: 0.9rem;
+    font-weight: 900;
+}
+
+.ownerCalendarReservationBody span {
+    color: var(--color-text-secondary);
+    font-size: 0.74rem;
+    font-weight: 800;
+    word-break: break-word;
+}
+
+.ownerCalendarReservationBody p {
+    margin: 0.2rem 0 0;
+    color: var(--color-text-secondary);
+    font-size: 0.72rem;
+    line-height: 1.35;
+}
+
+.ownerCalendarReservationCard .reservationActionsBlock {
+    margin-top: 0.2rem;
+}
+
+.ownerCalendarReservationCard .reservationActions {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.ownerCalendarReservationCard .reservationActions button {
+    min-height: 2rem;
+    padding: 0.22rem 0.55rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.72rem;
+    font-weight: 900;
+}
+
+.ownerCalendarReservationCard .actionFeedback {
+    margin: 0.35rem 0 0;
+    font-size: 0.68rem;
+}
+
+@media (max-width: 720px) {
+
+    .ownerCalendarTopbar,
+    .ownerCalendarToolbar {
+        display: grid;
+    }
+
+    .ownerCalendarStats {
+        justify-content: flex-start;
+    }
+
+    .ownerCalendarCreateButton {
+        margin-inline-start: 0;
+    }
+
+    .ownerCalendarScroll {
+        border-radius: var(--radius-lg);
+    }
+
+    .ownerCalendarGrid {
+        min-width: 920px;
+        grid-template-columns: 4.25rem repeat(7, minmax(8rem, 1fr));
+    }
+}
+
+@media (max-width: 1040px) {
+
+    .summaryGrid,
+    .quickGrid,
+    .actionGrid,
+    .metricsRow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 980px) {
+
+    .hero,
+    .dashboardGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .heroAside,
+    .accountSummaryGrid,
+    .infoGrid,
+    .tableMetaGrid,
+    .reservationMetaGrid,
+    .summaryGrid,
+    .quickGrid,
+    .actionGrid,
+    .metricsRow,
+    .detailsGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .heroContent {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Kanban Board Styles */
+
+.kanbanDragHint {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 4rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: var(--space-4);
+    border-radius: 1.4rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 252, 248, 0.94));
+    border: 1px solid rgba(229, 231, 235, 0.9);
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.07);
+}
+
+.kanbanDragHintContent {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.kanbanDragHintIcon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    animation: wave 2s ease-in-out infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(14deg);
+    }
+
+    75% {
+        transform: rotate(-14deg);
+    }
+}
+
+.kanbanDragHintText {
+    color: var(--color-text);
+    font-size: 0.98rem;
+    font-weight: 800;
+    line-height: 1.4;
+    margin: 0;
+    text-align: center;
+}
+
+.kanbanDragHint .reservationsCreateMain {
+    flex: 0 0 auto;
+}
+
+.kanbanBoard {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: start;
+}
+
+.kanbanColumn {
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
+    padding: 1rem;
+    border-radius: 1.4rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(250, 250, 251, 0.94));
+    border: 1px solid rgba(229, 231, 235, 0.82);
+    box-shadow: 0 18px 44px rgba(15, 23, 42, 0.06);
+    transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease, background 220ms ease;
+}
+
+.kanbanColumn.dragOver {
+    border-color: rgba(232, 93, 4, 0.26);
+    background: linear-gradient(180deg, rgba(255, 249, 243, 0.98), rgba(255, 245, 238, 0.94));
+    box-shadow: 0 0 0 3px rgba(232, 93, 4, 0.08), 0 18px 36px rgba(232, 93, 4, 0.1);
+    transform: translateY(-2px);
+}
+
+.kanbanColumnHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding-bottom: 0.85rem;
+    margin-bottom: 0.9rem;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.72);
+    flex-shrink: 0;
+}
+
+.kanbanColumnTitle {
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+}
+
+.kanbanColumnCount {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.1rem;
+    min-height: 2.1rem;
+    padding: 0.3rem 0.68rem;
+    border-radius: var(--radius-pill);
+    background: rgba(243, 244, 246, 0.96);
+    color: var(--color-text-secondary);
+    font-size: 0.92rem;
+    font-weight: 800;
+    line-height: 1;
+    box-shadow: inset 0 0 0 1px rgba(229, 231, 235, 0.72);
+}
+
+.kanbanColumnAvailable .kanbanColumnCount {
+    background: rgba(220, 252, 231, 0.92);
+    color: var(--color-success);
+}
+
+.kanbanColumnReserved .kanbanColumnCount {
+    background: rgba(255, 237, 213, 0.92);
+    color: var(--color-primary-hover);
+}
+
+.kanbanColumnFull .kanbanColumnCount {
+    background: rgba(254, 226, 226, 0.94);
+    color: #dc2626;
+}
+
+.kanbanCards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.15rem;
+    margin: -0.15rem;
+}
+
+.kanbanTableCard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.95rem 1rem;
+    border-radius: 1.15rem;
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(229, 231, 235, 0.78);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+    transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+    cursor: grab;
+    position: relative;
+}
+
+.kanbanTableCard::before {
+    content: '';
+    position: absolute;
+    top: 0.75rem;
+    bottom: 0.75rem;
+    inset-inline-start: 0;
+    width: 0.24rem;
+    background: linear-gradient(180deg, rgba(232, 93, 4, 0.72) 0%, rgba(251, 146, 60, 0.55) 100%);
+    border-radius: 999px;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.kanbanTableCard:hover::before {
+    opacity: 1;
+}
+
+.kanbanTableCard:hover {
+    border-color: rgba(232, 93, 4, 0.22);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08), 0 8px 20px rgba(232, 93, 4, 0.06);
+    transform: translateY(-2px);
+}
+
+.kanbanTableCardDragging {
+    opacity: 0.4;
+    cursor: grabbing;
+    transform: rotate(3deg);
+}
+
+.kanbanTableCard[draggable="true"] {
+    cursor: grab;
+}
+
+.kanbanTableCard:active {
+    cursor: grabbing;
+}
+
+.kanbanTableHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.kanbanTableName {
+    color: var(--color-text);
+    font-size: 1.02rem;
+    font-weight: 900;
+    line-height: 1.25;
+    flex: 1;
+    letter-spacing: -0.01em;
+}
+
+.kanbanTableCapacity {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 1.7rem;
+    padding: 0.34rem 0.68rem;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 237, 213, 0.9);
+    color: var(--color-primary-hover);
+    font-size: 0.76rem;
+    font-weight: 800;
+    white-space: nowrap;
+    line-height: 1;
+    box-shadow: inset 0 0 0 1px rgba(232, 93, 4, 0.08);
+}
+
+.kanbanTableStatus {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    min-height: 1.65rem;
+    padding: 0.32rem 0.82rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.42);
+}
+
+.kanbanTableStatusAvailable {
+    background: rgba(22, 163, 74, 0.15);
+    color: var(--color-success);
+}
+
+.kanbanTableStatusReserved {
+    background: rgba(232, 93, 4, 0.15);
+    color: var(--color-primary-hover);
+}
+
+.kanbanTableStatusInactive {
+    background: rgba(107, 114, 128, 0.15);
+    color: var(--color-text-secondary);
+}
+
+.kanbanTableStatusFull {
+    background: rgba(220, 38, 38, 0.15);
+    color: #dc2626;
+}
+
+.kanbanTableReservation {
+    display: grid;
+    gap: 0.375rem;
+    padding: 0.75rem 0.8rem;
+    border-radius: 1rem;
+    background: linear-gradient(180deg, rgba(255, 249, 243, 0.9) 0%, rgba(255, 245, 238, 0.82) 100%);
+    border: 1px solid rgba(253, 186, 116, 0.22);
+}
+
+.kanbanReservationLabel {
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.kanbanReservationDate {
+    color: var(--color-text);
+    font-size: 0.84rem;
+    font-weight: 800;
+}
+
+.kanbanReservationGuests {
+    color: var(--color-text-secondary);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.kanbanTableId {
+    color: var(--color-text-tertiary);
+    font-size: 0.66rem;
+    font-family: monospace;
+    opacity: 0.42;
+    margin-top: 0.1rem;
+    letter-spacing: 0.02em;
+}
+
+.kanbanEmptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-10) var(--space-4);
+    text-align: center;
+    border-radius: 1.2rem;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px dashed rgba(229, 231, 235, 0.72);
+    flex: 1;
+    min-height: 200px;
+}
+
+.kanbanEmptyIcon {
+    font-size: 2.5rem;
+    opacity: 0.25;
+}
+
+.kanbanEmptyText {
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+.kanbanDropMessage {
+    padding: var(--space-3);
+    margin-bottom: var(--space-3);
+    border-radius: var(--radius-md);
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    animation: slideDown 0.3s ease, fadeIn 0.2s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.kanbanDropMessage p {
+    color: #2563eb;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+}
+
+.kanbanLoadingOverlay {
+    position: fixed;
+    bottom: var(--space-6);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-pill);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.2s ease;
+}
+
+/* Table Drawer Styles */
+
+.drawerBackdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    background: rgba(15, 23, 42, 0.34);
+    backdrop-filter: blur(6px);
+    animation: fadeIn 0.2s ease;
+}
+
+.drawer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: min(52rem, 100%);
+    max-height: min(88vh, 52rem);
+    background: var(--color-background);
+    box-shadow: 0 28px 60px rgba(15, 23, 42, 0.18);
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.6rem;
+    border: 1px solid rgba(229, 231, 235, 0.9);
+    animation: fadeIn 0.22s ease;
+    overflow: hidden;
+}
+
+.drawerHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: 1.15rem 1.25rem;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+    background: var(--color-surface);
+}
+
+.drawerTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.3;
+    margin: 0;
+}
+
+.drawerSubtitle {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.drawerCloseButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(229, 231, 235, 0.8);
+    background: var(--color-surface);
+    color: var(--color-text-secondary);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.drawerCloseButton:hover {
+    background: rgba(229, 231, 235, 0.5);
+    border-color: rgba(229, 231, 235, 1);
+    color: var(--color-text);
+}
+
+.drawerContent {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.15rem 1.25rem 1.25rem;
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: start;
+}
+
+.drawerCard {
+    display: grid;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+}
+
+.drawerCardTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.drawerInfoGrid {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.drawerInfoItem {
+    display: grid;
+    gap: 0.375rem;
+    padding: var(--space-3);
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(229, 231, 235, 0.6);
+}
+
+.drawerInfoItem dt {
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.drawerInfoItem dd {
+    color: var(--color-text);
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+.drawerStatusBadge {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    min-height: 1.75rem;
+    padding: 0.375rem 0.75rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+
+.drawerMonoText {
+    font-family: monospace;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}
+
+.statusAvailable {
+    background: rgba(22, 163, 74, 0.12);
+    color: var(--color-success);
+}
+
+.statusReserved {
+    background: rgba(232, 93, 4, 0.1);
+    color: var(--color-primary-hover);
+}
+
+.statusInactive {
+    background: rgba(107, 114, 128, 0.12);
+    color: var(--color-text-secondary);
+}
+
+.statusFull {
+    background: rgba(220, 38, 38, 0.1);
+    color: #dc2626;
+}
+
+.drawerReservationCard {
+    background: linear-gradient(135deg, rgba(255, 248, 243, 0.8) 0%, rgba(254, 241, 232, 0.6) 100%);
+    border: 1px solid rgba(253, 186, 116, 0.3);
+}
+
+.drawerReservationList {
+    display: grid;
+    gap: 0.85rem;
+    max-height: 20rem;
+    overflow-y: auto;
+    padding-inline-end: 0.2rem;
+}
+
+.drawerReservationEmpty {
+    display: grid;
+    place-items: center;
+    min-height: 7rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.62);
+    border: 1px dashed rgba(253, 186, 116, 0.28);
+}
+
+.drawerReservationEmpty p {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.drawerReservationInfo {
+    display: grid;
+    gap: var(--space-2);
+    padding: 0.85rem 0.95rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.66);
+    border: 1px solid rgba(253, 186, 116, 0.18);
+}
+
+.drawerReservationRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid rgba(253, 186, 116, 0.15);
+}
+
+.drawerReservationRow:last-child {
+    border-bottom: none;
+}
+
+.drawerReservationLabel {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.drawerReservationValue {
+    color: var(--color-text);
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+.drawerReservationStatus {
+    color: var(--color-primary-hover);
+    font-weight: 600;
+}
+
+.drawerActions {
+    display: grid;
+    gap: var(--space-3);
+    grid-column: 1 / -1;
+}
+
+.drawerActionsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-3);
+}
+
+.drawerActionButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 5rem;
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(229, 231, 235, 0.8);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.drawerActionButton:hover:not(:disabled) {
+    border-color: rgba(232, 93, 4, 0.3);
+    background: rgba(255, 248, 243, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.drawerActionButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.drawerActionIcon {
+    font-size: 1.5rem;
+}
+
+.drawerActionOccupied:hover:not(:disabled) {
+    border-color: rgba(220, 38, 38, 0.3);
+    background: rgba(254, 242, 242, 0.5);
+}
+
+.drawerActionAvailable:hover:not(:disabled) {
+    border-color: rgba(22, 163, 74, 0.3);
+    background: rgba(240, 253, 244, 0.5);
+}
+
+.drawerActionReserved:hover:not(:disabled) {
+    border-color: rgba(234, 179, 8, 0.3);
+    background: rgba(254, 252, 232, 0.5);
+}
+
+.drawerActionCleaning:hover:not(:disabled) {
+    border-color: rgba(59, 130, 246, 0.3);
+    background: rgba(239, 246, 255, 0.5);
+}
+
+.drawerActionOutOfService:hover:not(:disabled) {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: rgba(254, 252, 232, 0.5);
+}
+
+.drawerPrimaryButton {
+    width: 100%;
+    min-height: 3rem;
+    margin-top: var(--space-2);
+}
+
+.drawerNotice {
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    grid-column: 1 / -1;
+}
+
+.drawerNoticeText {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    text-align: center;
+    margin: 0;
+}
+
+.drawerSuccessMessage {
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    background: rgba(22, 163, 74, 0.08);
+    border: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+.drawerSuccessMessage p {
+    color: var(--color-success);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+}
+
+.drawerErrorMessage {
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    background: rgba(220, 38, 38, 0.08);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+.drawerErrorMessage p {
+    color: #dc2626;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 720px) {
+    .page {
+        padding-bottom: var(--space-10);
+    }
+
+    .heroAside,
+    .accountSummaryGrid,
+    .infoGrid,
+    .tableMetaGrid,
+    .reservationMetaGrid,
+    .summaryGrid,
+    .quickGrid,
+    .actionGrid,
+    .metricsRow,
+    .detailsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .viewNav,
+    .filterActions,
+    .stateActions,
+    .reservationKeyline,
+    .quickMeta,
+    .restaurantSignals {
+        justify-content: flex-start;
+    }
+
+    .quickTop,
+    .previewTop,
+    .restaurantHeader,
+    .tableHeader,
+    .tableCardTop,
+    .reservationTop,
+    .filterBar {
+        display: grid;
+    }
+
+    .kanbanBoard {
+        grid-template-columns: 1fr;
+    }
+
+    .drawerHeader {
+        padding: var(--space-4);
+    }
+
+    .drawerContent {
+        padding: var(--space-4);
+        grid-template-columns: 1fr;
+    }
+
+    .drawerActionsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .drawerActionsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Calendar mobile adjustments */
+    .calendarHeader {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .calendarNavigation {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .calendarNavButton {
+        flex: 1;
+        min-width: 100px;
+    }
+
+    .calendarGrid {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+        background: transparent;
+        border: none;
+    }
+
+    .calendarTimeColumn {
+        display: none;
+    }
+
+    .calendarDayColumn {
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+    }
+
+    .calendarDayHeaderCell {
+        border-bottom: 2px solid var(--border-color);
+    }
+
+    .calendarHourCell {
+        position: relative;
+        padding-right: 3.5rem;
+    }
+
+    .calendarHourCell:not(:empty)::before {
+        content: attr(data-hour);
+        position: absolute;
+        left: var(--space-2);
+        top: var(--space-2);
+        font-size: 0.75rem;
+        color: var(--text-secondary);
+        font-weight: 500;
+    }
+}
+
+
+
+.reservationsFullPage {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    transform: none;
+    display: grid;
+    gap: 1.35rem;
+}
+
+.reservationsWorkspace {
+    display: block;
+    width: 100%;
+}
+
+.reservationsMainPanel {
+    display: grid;
+    gap: 1.35rem;
+    min-width: 0;
+    width: 100%;
+    max-width: min(1280px, 100%);
+    margin-inline: auto;
+}
+
+.reservationsHero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+}
+
+.reservationsHeroText {
+    display: grid;
+    gap: 0.2rem;
+    text-align: right;
+}
+
+.reservationsHeroEyebrow {
+    color: var(--color-text-secondary);
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.reservationsHeroText h1 {
+    margin: 0;
+    color: var(--color-text);
+    font-size: clamp(1.8rem, 3.3vw, 2.5rem);
+    font-weight: 900;
+    line-height: 1.08;
+}
+
+.reservationsHeroText p {
+    margin: 0.2rem 0 0;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.reservationsCreateMain {
+    min-height: 3rem;
+    padding: 0.78rem 1.45rem;
+    border: 0;
+    border-radius: 1rem;
+    background: var(--color-primary);
+    color: white;
+    font-size: 0.94rem;
+    font-weight: 900;
+    opacity: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow: 0 12px 24px rgba(232, 93, 4, 0.22);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.reservationsCreateMain:hover:not(:disabled) {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 16px 32px rgba(232, 93, 4, 0.28);
+    background: var(--color-primary-hover);
+}
+
+.reservationsCreateMain:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.tableForm {
+    display: grid;
+    gap: 1rem;
+}
+
+.tableFormGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+}
+
+.fieldGroup {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.checkboxRow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--color-text-secondary);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.checkboxRow input {
+    width: 1rem;
+    height: 1rem;
+}
+
+.tableFormActions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+.formHint {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.formError {
+    margin: 0;
+    color: #b91c1c;
+    font-size: 0.79rem;
+    font-weight: 700;
+}
+
+.reservationsCalendarCard,
+.reservationsSideCard {
+    border: 1px solid rgba(229, 231, 235, 0.9);
+    border-radius: 1.4rem;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 22px 54px rgba(15, 23, 42, 0.08);
+}
+
+.reservationsCalendarCard {
+    overflow: hidden;
+}
+
+.reservationsCalendarToolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    min-height: 4rem;
+    padding: 1rem 1.15rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 252, 248, 0.94));
+    border-bottom: 1px solid rgba(229, 231, 235, 0.72);
+}
+
+.reservationsCalendarToolbarRight,
+.reservationsCalendarToolbarCenter,
+.reservationsCalendarToolbarLeft {
+    display: flex;
+    align-items: center;
+}
+
+.reservationsCalendarToolbarRight {
+    flex: 1 1 0;
+    justify-content: flex-start;
+}
+
+.reservationsCalendarToolbarCenter {
+    flex: 0 1 auto;
+    justify-content: center;
+    min-width: 14rem;
+}
+
+.reservationsCalendarToolbarLeft {
+    flex: 1 1 0;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+}
+
+.reservationsStatusTabs,
+.reservationsWeekControls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.reservationsToolbarChip,
+.reservationsWeekControls button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.4rem;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(229, 231, 235, 0.82);
+    background: rgba(255, 255, 255, 0.98);
+    color: var(--color-text-secondary);
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.04);
+    transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.reservationsStatusTabs .reservationsTabActive {
+    border-color: rgba(232, 93, 4, 0.3);
+    background: rgba(232, 93, 4, 0.12);
+    color: var(--color-primary-hover);
+}
+
+.reservationsToolbarIcon {
+    width: 2.4rem;
+    min-width: 2.4rem;
+    padding-inline: 0;
+    font-size: 0.98rem;
+}
+
+.reservationsCalendarToolbarCenter strong {
+    min-width: 12rem;
+    text-align: center;
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 900;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+}
+
+.reservationsToolbarChip:hover,
+.reservationsWeekControls button:hover {
+    border-color: rgba(232, 93, 4, 0.18);
+    background: rgba(255, 247, 237, 0.96);
+    color: var(--color-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(232, 93, 4, 0.08);
+}
+
+.reservationsCalendarScroll {
+    overflow: auto;
+    padding: 0.55rem;
+    background: rgba(249, 250, 251, 0.55);
+}
+
+.reservationsCalendarGrid {
+    min-width: 1080px;
+    display: grid;
+    grid-template-columns: 4.5rem repeat(7, minmax(8.7rem, 1fr));
+    grid-template-rows: 3.75rem repeat(var(--calendar-hours, 15), minmax(4.9rem, auto));
+    background: rgba(229, 231, 235, 0.58);
+    gap: 1px;
+    border: 1px solid rgba(229, 231, 235, 0.7);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.reservationsCalendarCorner,
+.reservationsDayHeader,
+.reservationsTimeCell,
+.reservationsSlot {
+    background: white;
+}
+
+.reservationsCalendarCorner {
+    position: sticky;
+    right: 0;
+    z-index: 5;
+    display: grid;
+    place-items: center;
+    color: var(--color-text-secondary);
+    font-size: 0.78rem;
+    font-weight: 900;
+    background: rgba(249, 250, 251, 0.98);
+}
+
+.reservationsDayHeader {
+    position: sticky;
+    top: 0;
+    z-index: 4;
+    display: grid;
+    place-items: center;
+    gap: 0.15rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.reservationsDayHeader strong {
+    color: var(--color-text);
+    font-size: 0.82rem;
+    font-weight: 900;
+}
+
+.reservationsDayHeader span {
+    color: var(--color-text-secondary);
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.reservationsDayHeaderToday {
+    background: rgba(255, 237, 213, 0.9);
+    box-shadow: inset 0 -3px 0 rgba(232, 93, 4, 0.7);
+}
+
+.reservationsTimeCell {
+    position: sticky;
+    right: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 0.45rem;
+    background: rgba(249, 250, 251, 0.98);
+    color: var(--color-text-secondary);
+    font-size: 0.7rem;
+    font-weight: 900;
+}
+
+.reservationsSlot {
+    position: relative;
+    display: grid;
+    align-content: start;
+    padding: 0.55rem;
+    cursor: pointer;
+    background:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)),
+        repeating-linear-gradient(to bottom, transparent 0, transparent 49%, rgba(229, 231, 235, 0.3) 50%);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reservationsSlotToday {
+    background:
+        linear-gradient(to bottom, rgba(255, 247, 237, 0.82), rgba(255, 252, 248, 0.9)),
+        repeating-linear-gradient(to bottom, transparent 0, transparent 49%, rgba(232, 93, 4, 0.08) 50%);
+}
+
+.reservationsSlotStack {
+    display: grid;
+    gap: 0.48rem;
+    align-content: start;
+}
+
+.reservationsSlot:hover {
+    background: rgba(255, 248, 243, 0.86);
+    box-shadow: inset 0 0 0 1px rgba(232, 93, 4, 0.1);
+}
+
+.reservationsSlotEmpty::after {
+    content: attr(data-slot-hint);
+    position: absolute;
+    inset-inline-start: 0.55rem;
+    inset-block-end: 0.5rem;
+    padding: 0.18rem 0.45rem;
+    border-radius: 999px;
+    background: rgba(255, 249, 243, 0.96);
+    border: 1px solid rgba(232, 93, 4, 0.16);
+    color: rgba(182, 90, 24, 0.92);
+    font-size: 0.62rem;
+    font-weight: 800;
+    line-height: 1;
+    opacity: 0;
+    transform: translateY(4px);
+    pointer-events: none;
+    transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.reservationsSlotEmpty:hover::after,
+.reservationsSlotEmpty:focus-visible::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reservationsSlot:focus-visible {
+    outline: 2px solid rgba(232, 93, 4, 0.32);
+    outline-offset: -2px;
+}
+
+.reservationsEventCard {
+    position: relative;
+    display: grid;
+    gap: 0.38rem;
+    min-height: 3.3rem;
+    padding: 0.58rem 0.65rem;
+    border-radius: 0.95rem;
+    border: 1px solid rgba(229, 231, 235, 0.85);
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.09);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.reservationsEventCard:hover {
+    transform: translateY(-1px) scale(1.015);
+    box-shadow: 0 16px 30px rgba(15, 23, 42, 0.14);
+}
+
+.reservationsEventCard:focus-visible {
+    outline: 2px solid rgba(232, 93, 4, 0.42);
+    outline-offset: 2px;
+}
+
+.reservationsEventHead {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.35rem;
+    min-width: 0;
+}
+
+.reservationsEventDot {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 999px;
+    flex: 0 0 auto;
+}
+
+.reservationsEventBody {
+    display: grid;
+    gap: 0.18rem;
+    min-width: 0;
+}
+
+.reservationsEventMetaLine {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.35rem;
+    min-width: 0;
+}
+
+.reservationsEventPENDING {
+    background: rgba(254, 243, 199, 0.9);
+    border-color: rgba(245, 158, 11, 0.36);
+}
+
+.reservationsEventCONFIRMED {
+    background: rgba(187, 247, 208, 0.95);
+    border-color: rgba(22, 163, 74, 0.56);
+    box-shadow: inset 0 0 0 1px rgba(22, 163, 74, 0.12);
+}
+
+.reservationsEventCOMPLETED {
+    background: rgba(219, 234, 254, 0.9);
+    border-color: rgba(59, 130, 246, 0.34);
+}
+
+.reservationsEventCANCELLED {
+    background: rgba(243, 244, 246, 0.92);
+    border-color: rgba(156, 163, 175, 0.34);
+    opacity: 0.72;
+}
+
+.calendarStatusDot {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 999px;
+}
+
+.calendarDotPending {
+    background: #f59e0b;
+}
+
+.calendarDotConfirmed {
+    background: #15803d;
+}
+
+.reservationsEventCONFIRMED .reservationsEventHead strong,
+.reservationsEventCONFIRMED .reservationsEventBody b {
+    color: #14532d;
+}
+
+.reservationsEventCONFIRMED .reservationsEventBody span,
+.reservationsEventCONFIRMED .reservationsEventBody small {
+    color: #166534;
+}
+
+.calendarDotCompleted {
+    background: #2563eb;
+}
+
+.calendarDotCancelled {
+    background: #9ca3af;
+}
+
+.reservationsEventHead strong {
+    color: var(--color-text);
+    font-size: 0.7rem;
+    font-weight: 900;
+    line-height: 1.15;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.reservationsEventBody b {
+    width: fit-content;
+    padding: 0.22rem 0.5rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.74);
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    color: var(--color-text);
+    font-size: 0.73rem;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.reservationsEventPENDING .reservationsEventBody b {
+    background: rgba(245, 158, 11, 0.14);
+    border-color: rgba(245, 158, 11, 0.24);
+    color: #92400e;
+}
+
+.reservationsEventCONFIRMED .reservationsEventBody b {
+    background: rgba(22, 163, 74, 0.14);
+    border-color: rgba(22, 163, 74, 0.24);
+    color: #14532d;
+}
+
+.reservationsEventCOMPLETED .reservationsEventBody b {
+    background: rgba(37, 99, 235, 0.12);
+    border-color: rgba(37, 99, 235, 0.2);
+    color: #1e3a8a;
+}
+
+.reservationsEventCANCELLED .reservationsEventBody b {
+    background: rgba(107, 114, 128, 0.12);
+    border-color: rgba(107, 114, 128, 0.18);
+    color: #4b5563;
+}
+
+.reservationsEventBody span,
+.reservationsEventBody small {
+    color: var(--color-text-secondary);
+    font-size: 0.61rem;
+    font-weight: 700;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.reservationsEventCard .reservationActionsBlock {
+    display: none;
+}
+
+.liveNotice {
+    position: fixed;
+    inset-block-start: 1.2rem;
+    inset-inline-end: 1.2rem;
+    z-index: 80;
+    display: grid;
+    gap: 0.18rem;
+    max-width: min(24rem, calc(100vw - 2rem));
+    border-radius: 0.9rem;
+    border: 1px solid transparent;
+    padding: 0.7rem 0.95rem;
+    box-shadow: 0 14px 26px rgba(15, 23, 42, 0.16);
+    backdrop-filter: blur(3px);
+}
+
+.liveNotice strong {
+    font-size: 0.82rem;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.liveNotice span {
+    font-size: 0.74rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.liveNoticeSuccess {
+    border-color: rgba(22, 163, 74, 0.38);
+    background: rgba(220, 252, 231, 0.96);
+    color: #14532d;
+}
+
+.liveNoticeWarning {
+    border-color: rgba(245, 158, 11, 0.38);
+    background: rgba(254, 243, 199, 0.97);
+    color: #78350f;
+}
+
+.reservationsSidebar {
+    display: grid;
+    gap: 1rem;
+}
+
+.reservationsSideCard {
+    display: grid;
+    gap: 1rem;
+    padding: 1.1rem;
+}
+
+.reservationsSideCard h3 {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 1.05rem;
+    font-weight: 900;
+}
+
+.reservationsSummaryGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.reservationsSummaryTile {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    min-height: 8.25rem;
+    padding: 1.15rem;
+    border-radius: 1.15rem;
+    border: 1px solid rgba(229, 231, 235, 0.86);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(249, 250, 251, 0.94));
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.06);
+}
+
+.reservationsSummaryTile:nth-child(2) {
+    background: rgba(255, 247, 237, 0.92);
+}
+
+.reservationsSummaryTile:nth-child(3) {
+    background: rgba(240, 253, 244, 0.92);
+}
+
+.reservationsSummaryTile:nth-child(4) {
+    background: rgba(239, 246, 255, 0.92);
+}
+
+.reservationsSummaryIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    flex: 0 0 auto;
+    border-radius: 0.9rem;
+    background: rgba(232, 93, 4, 0.1);
+    color: var(--color-primary);
+    font-size: 1.15rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.reservationsSummaryTile div:last-child {
+    display: grid;
+    gap: 0.38rem;
+    min-width: 0;
+}
+
+.reservationsSummaryGrid span {
+    color: var(--color-text);
+    font-size: 0.84rem;
+    font-weight: 900;
+}
+
+.reservationsSummaryGrid small {
+    color: var(--color-text-secondary);
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+.reservationsSummaryGrid strong {
+    color: #0f172a;
+    font-size: clamp(1.65rem, 2vw, 2rem);
+    font-weight: 900;
+    line-height: 1;
+}
+
+.reservationsUpcomingList {
+    display: grid;
+    gap: 0.7rem;
+}
+
+.reservationsUpcomingItem {
+    position: relative;
+    display: grid;
+    gap: 0.55rem;
+    padding: 0.85rem 0.9rem;
+    border-radius: 1rem;
+    background: rgba(249, 250, 251, 0.9);
+    border: 1px solid rgba(229, 231, 235, 0.78);
+}
+
+.reservationsUpcomingMeta {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.reservationsUpcomingBody {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.reservationsUpcomingMeta .calendarStatusDot {
+    position: static;
+    flex: none;
+    margin-top: 0.3rem;
+}
+
+.reservationsUpcomingItem strong {
+    color: var(--color-text);
+    font-size: 0.82rem;
+}
+
+.reservationsUpcomingItem p,
+.reservationsUpcomingItem small,
+.reservationsUpcomingBody span {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+.reservationsQuickActions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+}
+
+.reservationsQuickActions button {
+    min-height: 3rem;
+    border-radius: 0.9rem;
+    border: 1px solid rgba(229, 231, 235, 0.95);
+    background: white;
+    color: var(--color-text-secondary);
+    font-size: 0.82rem;
+    font-weight: 900;
+}
+
+.reservationsQuickActionLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    border-radius: 0.9rem;
+    border: 1px solid rgba(229, 231, 235, 0.95);
+    background: white;
+    color: var(--color-text-secondary);
+    font-size: 0.82rem;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.reservationsQuickActions .reservationsQuickActionPrimary {
+    border-color: rgba(232, 93, 4, 0.22);
+    background: rgba(232, 93, 4, 0.1);
+    color: var(--color-primary-hover);
+}
+
+.reservationsModalBackdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 110;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    background: rgba(15, 23, 42, 0.28);
+    backdrop-filter: blur(6px);
+}
+
+.reservationsModalCard {
+    width: min(100%, 42rem);
+    display: grid;
+    gap: 1.25rem;
+    padding: 1.35rem;
+    border-radius: 1.5rem;
+}
+
+.reservationsModalHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.reservationsModalHeader h3 {
+    margin: 0.15rem 0 0.35rem;
+    color: var(--color-text);
+    font-size: 1.45rem;
+    font-weight: 900;
+}
+
+.reservationsModalHeader p:last-child {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.reservationsModalClose {
+    width: 2.6rem;
+    height: 2.6rem;
+    border: 1px solid rgba(229, 231, 235, 0.95);
+    border-radius: 999px;
+    background: white;
+    color: var(--color-text-secondary);
+    font-size: 1.35rem;
+    cursor: pointer;
+}
+
+.reservationsCreateForm {
+    display: grid;
+    gap: 1rem;
+}
+
+.reservationsCreateGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+}
+
+.reservationsNotesInput {
+    min-height: 7rem;
+    resize: vertical;
+}
+
+.reservationsCreateActions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+.reservationsDetailGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
+.reservationsDetailItem {
+    display: grid;
+    gap: 0.25rem;
+    padding: 0.9rem 1rem;
+    border-radius: 1rem;
+    background: rgba(249, 250, 251, 0.92);
+    border: 1px solid rgba(229, 231, 235, 0.82);
+}
+
+.reservationsDetailItem span {
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.reservationsDetailItem strong {
+    color: var(--color-text);
+    font-size: 0.96rem;
+    font-weight: 900;
+    line-height: 1.45;
+}
+
+.reservationsDetailNotice {
+    margin: 0;
+    padding: 0.95rem 1rem;
+    border-radius: 1rem;
+    background: rgba(249, 250, 251, 0.92);
+    border: 1px solid rgba(229, 231, 235, 0.82);
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.reservationsEmptySide {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+@media (max-width: 1100px) {
+    .reservationsFullPage {
+        width: 100%;
+        margin-inline: 0;
+        transform: none;
+    }
+
+    .reservationsWorkspace {
+        grid-template-columns: 1fr;
+    }
+
+    .reservationsSummaryGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .reservationsSummaryGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .reservationsCreateGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .reservationsDetailGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .reservationsModalHeader,
+    .reservationsCreateActions {
+        display: grid;
+    }
+}
+
+.reservationsRestaurantShell {
+    display: block;
+    padding: 0;
+    background: transparent;
+    border: 0;
+}
+
+
+.reservationsFullPage {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    transform: none !important;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.reservationsRestaurantShell {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    background: transparent;
+    border: 0;
+}
+
+.reservationsWorkspace {
+    width: 100%;
+    grid-template-columns: 320px minmax(0, 1fr);
+}
+
+.reservationsCalendarCard {
+    width: 100%;
+    max-width: 100%;
+}
+
+.reservationsCalendarScroll {
+    width: 100%;
+}
+
+.reservationsCalendarGrid {
+    min-width: 1180px;
+}
+
+.ownerWidePage {
+    width: min(1680px, calc(100vw - 32px));
+    margin-inline: auto;
+}
+
+.ownerPageWithSidebar {
+    position: relative;
+    display: block;
+    min-width: 0;
+}
+
+.ownerPageMain {
+    min-width: 0;
+    padding-right: 6rem;
+    transition: padding-right 220ms ease;
+}
+
+.ownerContextSidebar {
+    position: fixed;
+    inset-block-start: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 30;
+    width: 280px;
+    height: 100vh;
+    min-height: 0;
+    display: flex;
+    pointer-events: none;
+    direction: rtl;
+    transition: width 0.2s ease;
+}
+
+.ownerContextSidebarCollapsed {
+    pointer-events: none;
+    width: 80px;
+}
+
+.ownerPageWithSidebar:has(.ownerContextSidebarExpanded) .ownerPageMain {
+    padding-right: 296px;
+}
+
+.ownerSidebarToggleButton {
+    position: fixed;
+    top: 1.25rem;
+    right: 264px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.15rem;
+    height: 2.15rem;
+    padding: 0;
+    border-radius: 999px;
+    border: 1px solid rgba(232, 93, 4, 0.16);
+    background: #ffffff;
+    color: var(--color-primary);
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 3;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        right 0.2s ease;
+}
+
+.ownerSidebarToggleButton:hover {
+    background: rgba(232, 93, 4, 0.12);
+    border-color: rgba(232, 93, 4, 0.24);
+    color: var(--color-primary-hover);
+    transform: translateX(-1px);
+}
+
+.ownerContextSidebarCollapsed .ownerSidebarToggleButton {
+    right: 62px;
+}
+
+.ownerContextSidebarCollapsed .ownerSidebarToggleIcon {
+    transform: rotate(180deg);
+}
+
+.ownerSidebarPanel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    gap: 1.5rem;
+    padding: 1.5rem 1.125rem 1.125rem;
+    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 252, 249, 0.98) 100%);
+    border-left: 1px solid rgba(229, 231, 235, 0.9);
+    box-shadow: -12px 0 34px rgba(15, 23, 42, 0.045);
+    overflow-x: hidden;
+    overflow-y: auto;
+    pointer-events: auto;
+    transition: padding 0.2s ease;
+}
+
+.ownerContextSidebarCollapsed .ownerSidebarPanel {
+    padding-inline: 0.75rem;
+    align-items: center;
+}
+
+.ownerSidebarHeader {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 0;
+    padding: 1.3rem 0.2rem 0.75rem;
+}
+
+.ownerSidebarHeaderIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    color: var(--color-primary);
+}
+
+.ownerSidebarGlyph {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.ownerSidebarNavIcon .ownerSidebarGlyph * {
+    stroke-width: 2;
+}
+
+.ownerSidebarToggleIcon {
+    width: 1.1rem;
+    height: 1.1rem;
+    transition: transform 0.2s ease;
+}
+
+.ownerSidebarHeaderText {
+    display: grid;
+    gap: 0.15rem;
+    min-width: 0;
+    text-align: right;
+}
+
+.ownerSidebarHeaderText strong {
+    min-width: 0;
+    overflow: hidden;
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.35;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ownerSidebarHeaderText span {
+    color: var(--color-text-secondary);
+    font-size: 0.76rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.ownerSidebarNav {
+    display: grid;
+    gap: 1.05rem;
+}
+
+.ownerSidebarNavGroup {
+    display: grid;
+    gap: 8px;
+}
+
+.ownerSidebarNavGroupLabel {
+    padding-inline: 0.75rem;
+    color: #9ca3af;
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.ownerSidebarNavGroupItems {
+    display: grid;
+    gap: 8px;
+}
+
+.ownerSidebarNavLink {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.85rem;
+    min-height: 46px;
+    padding: 0.65rem 0.85rem;
+    border-right: 3px solid transparent;
+    border-radius: 10px;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.3;
+    text-decoration: none;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.ownerSidebarNavLink:hover {
+    background: rgba(232, 93, 4, 0.06);
+    color: var(--color-text);
+    transform: translateX(-1px);
+}
+
+.ownerSidebarNavLinkActive {
+    border-right-color: var(--color-primary);
+    background: rgba(232, 93, 4, 0.14);
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.ownerSidebarNavLinkActive:hover {
+    color: var(--color-primary-hover);
+}
+
+.ownerSidebarNavIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+    color: currentColor;
+}
+
+.ownerSidebarNavLabel {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ownerSidebarFooter {
+    display: grid;
+    gap: 0.9rem;
+    margin-top: auto;
+    padding-top: 1.1rem;
+    border-top: 1px solid rgba(229, 231, 235, 0.82);
+}
+
+.ownerSidebarUser {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 0;
+    padding: 0.55rem 0.65rem;
+    border-radius: 12px;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.ownerSidebarUser:hover {
+    background: rgba(249, 250, 251, 0.95);
+    transform: translateX(-1px);
+}
+
+.ownerSidebarAvatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.55rem;
+    height: 2.55rem;
+    flex-shrink: 0;
+    border-radius: 999px;
+    background: rgba(232, 93, 4, 0.1);
+    color: var(--color-primary);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.ownerSidebarUserText {
+    display: grid;
+    gap: 0.1rem;
+    min-width: 0;
+    text-align: right;
+}
+
+.ownerSidebarUserText strong {
+    overflow: hidden;
+    color: var(--color-text);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ownerSidebarUserText span {
+    color: var(--color-text-secondary);
+    font-size: 0.76rem;
+    font-weight: 500;
+}
+
+.ownerSidebarLogoutForm {
+    width: 100%;
+}
+
+.ownerSidebarLogoutButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.65rem;
+    width: 100%;
+    min-height: 42px;
+    padding: 0.55rem 0.75rem;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.ownerSidebarLogoutButton:hover {
+    background: rgba(232, 93, 4, 0.08);
+    color: var(--color-primary-hover);
+    transform: translateX(-1px);
+}
+
+.ownerSidebarLogoutText {
+    white-space: nowrap;
+}
+
+.ownerContextSidebarCollapsed .ownerSidebarHeader {
+    justify-content: center;
+    padding-top: 3.25rem;
+}
+
+.ownerContextSidebarCollapsed .ownerSidebarHeaderText,
+.ownerContextSidebarCollapsed .ownerSidebarNavLabel,
+.ownerContextSidebarCollapsed .ownerSidebarNavGroupLabel,
+.ownerContextSidebarCollapsed .ownerSidebarUserText,
+.ownerContextSidebarCollapsed .ownerSidebarLogoutText {
+    display: none;
+}
+
+.ownerContextSidebarCollapsed .ownerSidebarNavLink,
+.ownerContextSidebarCollapsed .ownerSidebarLogoutButton {
+    justify-content: center;
+    width: 48px;
+    min-height: 48px;
+    padding: 0;
+    border-right: 3px solid transparent;
+}
+
+.ownerContextSidebarCollapsed .ownerSidebarNavLinkActive {
+    border-right-color: var(--color-primary);
+}
+
+.ownerContextSidebarCollapsed .ownerSidebarFooter {
+    align-items: center;
+}
+
+.ownerContextSidebarCollapsed .ownerSidebarUser {
+    justify-content: center;
+    padding: 0;
+}
+
+@media (max-width: 1360px) {
+    .ownerPageWithSidebar:has(.ownerContextSidebarExpanded) .ownerPageMain {
+        padding-right: 6rem;
+    }
+}
+
+@media (max-width: 720px) {
+    .ownerPageMain {
+        padding-right: 0;
+    }
+
+    .ownerContextSidebar {
+        right: 0.5rem;
+        inset-block-start: 0;
+        display: block;
+    }
+
+    .ownerContextSidebarCollapsed {
+        width: 4.8rem;
+    }
+
+    .reservationsMainPanel {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 840px) {
+    .reservationsHero {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+    }
+
+    .reservationsCalendarToolbar {
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    .reservationsCalendarToolbarRight,
+    .reservationsCalendarToolbarCenter,
+    .reservationsCalendarToolbarLeft {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .reservationsCalendarToolbarCenter {
+        order: -1;
+        justify-content: center;
+    }
+
+    .reservationsCreateMain {
+        justify-self: auto;
+        height: auto;
+        width: auto;
+    }
+
+    .ownerSidebarPanel {
+        width: 100%;
+    }
+}

@@ -1,102 +1,153 @@
-import Image, { type ImageProps } from "next/image";
-import { Button } from "@repo/ui/button";
-import styles from "./page.module.css";
+import Link from "next/link";
+import { PublicLayout } from "./_components/area-shells";
+import styles from "./home.module.css";
 
-type Props = Omit<ImageProps, "src"> & {
-  srcLight: string;
-  srcDark: string;
-};
+const trustItems = [
+  { value: "بحث مباشر", label: "وصول سريع إلى صفحة المطعم المناسبة" },
+  { value: "تجربة عربية", label: "واجهة واضحة من الاستكشاف حتى الإدارة" },
+  { value: "تنقل منظّم", label: "مسارات أبسط بين الصفحة العامة والتفاصيل" },
+];
 
-const ThemeImage = (props: Props) => {
-  const { srcLight, srcDark, ...rest } = props;
+const steps = [
+  {
+    title: "استعرض المطاعم",
+    description: "ابدأ من صفحة المطاعم العامة وابحث باسم المطعم أو المدينة أو الحي من واجهة مباشرة وواضحة.",
+  },
+  {
+    title: "افتح التفاصيل المناسبة",
+    description: "راجع نبذة المطعم والطاولات المنشورة والمعلومات الأساسية من صفحة مركزة وسهلة القراءة.",
+  },
+  {
+    title: "انتقل حسب دورك",
+    description: "إن كنت زائراً واصل التصفح، وإن كنت مديراً فادخل إلى صفحة الإدارة المناسبة من نفس التجربة العامة.",
+  },
+];
 
-  return (
-    <>
-      <Image {...rest} src={srcLight} className="imgLight" />
-      <Image {...rest} src={srcDark} className="imgDark" />
-    </>
-  );
-};
+const benefits = [
+  {
+    title: "واجهة أهدأ وأوضح",
+    description: "الصفحة الرئيسية أصبحت تمهّد مباشرة لاكتشاف المطاعم بدلاً من توزيع الانتباه على رسائل عامة كثيرة.",
+  },
+  {
+    title: "تجربة متصلة مع بقية المنتج",
+    description: "لغة الواجهة ومسار التنقل ينسجمان الآن مع صفحة المطاعم والملخصات الإدارية الجديدة.",
+  },
+  {
+    title: "وصول مناسب لكل مستخدم",
+    description: "الزائر يبدأ من الاستكشاف، ومدير المطعم أو المشرف العام يصل إلى تسجيل الدخول من دون تعقيد.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <ThemeImage
-          className={styles.logo}
-          srcLight="turborepo-dark.svg"
-          srcDark="turborepo-light.svg"
-          alt="Turborepo logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>apps/web/app/page.tsx</code>
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <PublicLayout currentPath="/">
+      <div className={styles.page}>
+        <main className="container">
+          <div className={styles.stack}>
+            <section className={`${styles.hero} surface-alt`}>
+              <div className={styles.heroContent}>
+                <span className={styles.kicker}>حجز المطاعم</span>
+                <div className={styles.content}>
+                  <h1>اكتشف المطاعم من واجهة أوضح وأهدأ.</h1>
+                  <p>
+                    الصفحة الرئيسية أصبحت نقطة بداية مباشرة لتصفح المطاعم، فتح التفاصيل المناسبة، ثم الانتقال السلس إلى صفحة الإدارة عند الحاجة. كل شيء مصمم ليبدو منظماً وواضحاً من أول خطوة.
+                  </p>
+                </div>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new/clone?demo-description=Learn+to+implement+a+monorepo+with+a+two+Next.js+sites+that+has+installed+three+local+packages.&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F4K8ZISWAzJ8X1504ca0zmC%2F0b21a1c6246add355e55816278ef54bc%2FBasic.png&demo-title=Monorepo+with+Turborepo&demo-url=https%3A%2F%2Fexamples-basic-web.vercel.sh%2F&from=templates&project-name=Monorepo+with+Turborepo&repository-name=monorepo-turborepo&repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fturborepo%2Ftree%2Fmain%2Fexamples%2Fbasic&root-directory=apps%2Fdocs&skippable-integrations=1&teamSlug=vercel&utm_source=create-turbo"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://turborepo.dev/docs?utm_source"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-        <Button appName="web" className={styles.secondary}>
-          Open alert
-        </Button>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com/templates?search=turborepo&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://turborepo.dev?utm_source=create-turbo"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to turborepo.dev →
-        </a>
-      </footer>
-    </div>
+                <div className={styles.actions}>
+                  <Link href="/restaurants" className="button-primary">
+                    استعرض المطاعم
+                  </Link>
+                  <Link href="/login?source=public" className="button-secondary">
+                    تسجيل الدخول
+                  </Link>
+                </div>
+
+                <p className={styles.authNote}>
+                  هل تدير الجانب التشغيلي للمطعم؟ استخدم
+                  {" "}
+                  <Link href="/login?source=public" className={styles.authLink}>
+                    تسجيل الدخول
+                  </Link>
+                  {" "}
+                  للوصول إلى صفحة الإدارة المناسبة. يتم منح وصول مدير المطعم عبر دعوة من المشرف العام.
+                </p>
+              </div>
+
+              <aside className={`${styles.heroPanel} surface`}>
+                <span className={styles.panelEyebrow}>تجربة عامة مركزة</span>
+                <h2>ابدأ من المكان الصحيح داخل المنتج.</h2>
+                <p>
+                  بدل الصفحة التسويقية العامة، تعرض الواجهة الآن مساراً عملياً: تصفح، افتح المطعم، ثم واصل رحلتك حسب دورك داخل المنصة.
+                </p>
+
+                <dl className={styles.heroDetails}>
+                  <div>
+                    <dt>للباحث عن مطعم</dt>
+                    <dd>وصول مباشر إلى صفحة المطاعم والتفاصيل المنشورة.</dd>
+                  </div>
+                  <div>
+                    <dt>للمدير أو المشرف</dt>
+                    <dd>مدخل واضح إلى تسجيل الدخول دون تشتيت في الصفحة العامة.</dd>
+                  </div>
+                </dl>
+              </aside>
+            </section>
+
+            <section className={styles.trustSection} aria-label="مؤشرات الثقة">
+              {trustItems.map((item) => (
+                <article key={item.value} className={`${styles.trustCard} surface`}>
+                  <strong className={styles.trustValue}>{item.value}</strong>
+                  <p>{item.label}</p>
+                </article>
+              ))}
+            </section>
+
+            <section className={styles.sectionBlock}>
+              <div className={styles.sectionHeading}>
+                <span className={styles.sectionEyebrow}>كيف تعمل التجربة</span>
+                <h2>ثلاث خطوات بسيطة من الصفحة الرئيسية حتى الإجراء المناسب.</h2>
+                <p>الصفحة تعكس الآن نفس البساطة الموجودة في صفحة المطاعم والملخصات الجديدة داخل المنتج.</p>
+              </div>
+
+              <div className={styles.stepsGrid}>
+                {steps.map((step, index) => (
+                  <article key={step.title} className={`${styles.stepCard} surface-alt`}>
+                    <span className={styles.stepNumber}>{String(index + 1).padStart(2, "0")}</span>
+                    <h3>{step.title}</h3>
+                    <p>{step.description}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <section className={styles.sectionBlock}>
+              <div className={styles.sectionHeading}>
+                <span className={styles.sectionEyebrow}>لماذا هذه الواجهة</span>
+                <h2>واجهة عامة أقرب إلى المنتج من التسويق.</h2>
+                <p>التركيز هنا على الوضوح، التنقل السريع، وتوحيد اللغة مع بقية المسارات العامة والإدارية.</p>
+              </div>
+
+              <div className={styles.benefitsGrid}>
+                {benefits.map((benefit) => (
+                  <article key={benefit.title} className={`${styles.benefitCard} surface`}>
+                    <h3>{benefit.title}</h3>
+                    <p>{benefit.description}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <section className={`${styles.finalCta} surface-alt`}>
+              <div className={styles.sectionHeading}>
+                <span className={styles.sectionEyebrow}>ابدأ الآن</span>
+                <h2>تصفح المطاعم أولاً، ثم تابع رحلتك من داخل المنصة.</h2>
+                <p>استخدم شريط التنقل العلوي للانتقال بين الصفحة الرئيسية والمطاعم وتسجيل الدخول، بينما تبقى هذه الصفحة مخصصة لفهم المنتج بسرعة وهدوء.</p>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </PublicLayout>
   );
 }

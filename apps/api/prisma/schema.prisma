@@ -1,0 +1,147 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  CUSTOMER
+  RESTAURANT_ADMIN
+  SUPER_ADMIN
+}
+
+enum InvitationStatus {
+  PENDING
+  ACCEPTED
+  EXPIRED
+}
+
+enum ReservationStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+}
+
+enum TableStatus {
+  AVAILABLE
+  RESERVED
+  OCCUPIED
+}
+
+enum NotificationType {
+  RESERVATION_CREATED
+  RESERVATION_CANCELLED_BY_CUSTOMER
+  RESERVATION_CONFIRMED_BY_OWNER
+  RESERVATION_COMPLETED_BY_OWNER
+  RESERVATION_REJECTED_BY_OWNER
+  RESERVATION_CANCELLED_BY_OWNER
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  phone        String?
+  role         UserRole @default(CUSTOMER)
+  createdAt    DateTime @default(now())
+
+  restaurants     Restaurant[]
+  reservations    Reservation[]
+  invitationsSent Invitation[]  @relation("InvitationInviter")
+  notificationsReceived Notification[] @relation("NotificationRecipient")
+  notificationsActed    Notification[] @relation("NotificationActor")
+}
+
+model Restaurant {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  address     String
+  phone       String?
+  image       String?
+  openTime    String?
+  closeTime   String?
+  createdAt   DateTime @default(now())
+
+  ownerId String
+  owner   User   @relation(fields: [ownerId], references: [id])
+
+  tables       Table[]
+  reservations Reservation[]
+  invitations  Invitation[]
+}
+
+model Invitation {
+  id              String           @id @default(cuid())
+  email           String
+  role            UserRole
+  token           String           @unique
+  status          InvitationStatus @default(PENDING)
+  invitedByUserId String
+  restaurantId    String?
+  expiresAt       DateTime
+  acceptedAt      DateTime?
+  createdAt       DateTime         @default(now())
+
+  invitedBy  User        @relation("InvitationInviter", fields: [invitedByUserId], references: [id])
+  restaurant Restaurant? @relation(fields: [restaurantId], references: [id])
+
+  @@index([email])
+  @@index([status])
+  @@index([restaurantId])
+}
+
+model Table {
+  id        String      @id @default(cuid())
+  name      String
+  capacity  Int
+  isActive  Boolean     @default(true)
+  status    TableStatus @default(AVAILABLE)
+  createdAt DateTime    @default(now())
+
+  restaurantId String
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id])
+
+  reservations Reservation[]
+}
+
+model Reservation {
+  id              String            @id @default(cuid())
+  reservationDate DateTime
+  guestsCount     Int
+  notes           String?
+  status          ReservationStatus @default(PENDING)
+  createdAt       DateTime          @default(now())
+
+  userId       String
+  restaurantId String
+  tableId      String
+
+  user       User       @relation(fields: [userId], references: [id])
+  restaurant Restaurant @relation(fields: [restaurantId], references: [id])
+  table      Table      @relation(fields: [tableId], references: [id])
+}
+
+model Notification {
+  id           String           @id @default(cuid())
+  type         NotificationType
+  title        String
+  body         String
+  isRead       Boolean          @default(false)
+  createdAt    DateTime         @default(now())
+  reservationId String?
+  restaurantId  String?
+  actorUserId   String?
+  recipientUserId String
+
+  recipient User  @relation("NotificationRecipient", fields: [recipientUserId], references: [id])
+  actor     User? @relation("NotificationActor", fields: [actorUserId], references: [id])
+
+  @@index([recipientUserId, isRead, createdAt])
+  @@index([restaurantId, createdAt])
+}

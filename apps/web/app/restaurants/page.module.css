@@ -1,0 +1,354 @@
+.page {
+    padding: var(--space-4) 0 var(--space-12);
+}
+
+.heroWrap {
+    padding-top: var(--space-2);
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-4);
+    padding: clamp(1rem, 2.2vw, 1.35rem);
+    align-items: start;
+}
+
+.heroText {
+    display: grid;
+    gap: var(--space-2);
+    max-width: 42rem;
+}
+
+.heroText h1 {
+    font-size: clamp(1.8rem, 2.6vw, 2.35rem);
+}
+
+.heroText p {
+    color: var(--color-text-secondary);
+    font-size: 0.98rem;
+}
+
+.kicker {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    min-height: 2rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: var(--radius-pill);
+    background: rgba(232, 93, 4, 0.1);
+    color: var(--color-primary-hover);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.searchPanel {
+    display: grid;
+    gap: var(--space-3);
+    padding: var(--space-4);
+}
+
+.searchAutocomplete {
+    position: relative;
+    display: grid;
+    gap: var(--space-3);
+}
+
+.searchMeta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+}
+
+.searchHint {
+    color: var(--color-text-secondary);
+    font-size: 0.92rem;
+}
+
+.clearButton {
+    min-height: 2.5rem;
+    padding-inline: 0.25rem;
+}
+
+.dropdown {
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    left: 0;
+    right: 0;
+    z-index: 20;
+    overflow: hidden;
+}
+
+.suggestionList {
+    display: grid;
+}
+
+.suggestionButton {
+    display: grid;
+    gap: 0.2rem;
+    width: 100%;
+    padding: 0.95rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.7);
+    background: var(--color-surface);
+}
+
+.suggestionButton:last-child {
+    border-bottom: 0;
+}
+
+.suggestionButton:hover,
+.suggestionActive {
+    background: var(--color-surface-alt);
+    transform: none;
+}
+
+.suggestionName {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.suggestionAddress {
+    color: var(--color-text-secondary);
+    font-size: 0.92rem;
+}
+
+.dropdownState {
+    padding: 1rem;
+    color: var(--color-text-secondary);
+}
+
+.dropdownError {
+    color: var(--color-error);
+}
+
+.searchStatus {
+    color: var(--color-primary-hover);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.content {
+    display: grid;
+    gap: var(--space-4);
+    padding-top: var(--space-4);
+}
+
+.noticeCard {
+    display: grid;
+    gap: var(--space-3);
+    padding: clamp(1rem, 2vw, 1.25rem);
+    justify-items: start;
+}
+
+.noticeEyebrow {
+    color: var(--color-success);
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.resultSummary {
+    color: var(--color-text-secondary);
+    font-size: 0.97rem;
+}
+
+.sectionStack {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.resultBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.resultCount {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-4);
+}
+
+.card {
+    display: grid;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    min-height: 100%;
+}
+
+.cardLift {
+    transition:
+        transform var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.cardLift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft-hover);
+}
+
+.cardTop {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-3);
+}
+
+.cardEyebrow {
+    color: var(--color-primary);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    margin-bottom: var(--space-1);
+}
+
+.cardTitle {
+    font-size: 1.35rem;
+}
+
+.cardBadge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--radius-pill);
+    background: var(--color-surface-alt);
+    color: var(--color-text);
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.cardDescription {
+    font-size: 0.95rem;
+}
+
+.metaList {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.metaItem {
+    display: grid;
+    gap: 0.2rem;
+}
+
+.metaItem dt {
+    color: var(--color-text);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.metaItem dd {
+    color: var(--color-text-secondary);
+    font-size: 0.94rem;
+}
+
+.cardFooter {
+    padding-top: var(--space-1);
+}
+
+.stateCard {
+    display: grid;
+    gap: var(--space-3);
+    padding: clamp(1.15rem, 2.5vw, 1.6rem);
+    justify-items: start;
+}
+
+.emptyState {
+    border-color: rgba(253, 186, 116, 0.36);
+}
+
+.stateEyebrow {
+    color: var(--color-primary);
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.stateActions {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+}
+
+.skeletonLine,
+.skeletonBlock {
+    border-radius: var(--radius-sm);
+    background: linear-gradient(90deg,
+            rgba(229, 231, 235, 0.85) 0%,
+            rgba(254, 241, 232, 0.9) 50%,
+            rgba(229, 231, 235, 0.85) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s linear infinite;
+}
+
+.skeletonTitle {
+    width: 8.5rem;
+    height: 1.3rem;
+}
+
+.skeletonBadge {
+    width: 7rem;
+    height: 2rem;
+}
+
+.skeletonBody {
+    width: 100%;
+    height: 4.5rem;
+}
+
+.skeletonMeta {
+    width: 70%;
+    height: 0.95rem;
+}
+
+.skeletonButton {
+    width: 8.5rem;
+    height: 2.5rem;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+@media (max-width: 1040px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .page {
+        padding: var(--space-3) 0 var(--space-10);
+    }
+
+    .grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .cardTop,
+    .searchMeta,
+    .resultBar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
