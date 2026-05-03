@@ -1,0 +1,52 @@
+services:
+  restaurant-postgres:
+    image: postgres:16-alpine
+    container_name: restaurant-postgres
+    ports:
+      - "127.0.0.1:5440:5432"
+    environment:
+      POSTGRES_USER: restaurant_user
+      POSTGRES_PASSWORD: restaurant_password_change_me
+      POSTGRES_DB: restaurant_booking
+    volumes:
+      - restaurant_postgres_data:/var/lib/postgresql/data
+    networks:
+      - restaurant-network
+
+  restaurant-api:
+    container_name: restaurant-api
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    ports:
+      - "127.0.0.1:3010:3000"
+    environment:
+      DATABASE_URL: postgresql://restaurant_user:restaurant_password_change_me@restaurant-postgres:5432/restaurant_booking
+      JWT_SECRET: super-secret-dev-key-change-later
+      NODE_ENV: production
+    depends_on:
+      - restaurant-postgres
+    networks:
+      - restaurant-network
+
+  restaurant-web:
+    container_name: restaurant-web
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    ports:
+      - "127.0.0.1:3011:3000"
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: http://127.0.0.1:3010
+      API_BASE_URL: http://restaurant-api:3000
+      NODE_ENV: production
+    depends_on:
+      - restaurant-api
+    networks:
+      - restaurant-network
+
+volumes:
+  restaurant_postgres_data:
+
+networks:
+  restaurant-network:
