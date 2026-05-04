@@ -37,7 +37,7 @@ services:
     ports:
       - "127.0.0.1:3011:3000"
     environment:
-      NEXT_PUBLIC_API_BASE_URL: http://127.0.0.1:3010
+      NEXT_PUBLIC_API_BASE_URL: http://localhost/api
       API_BASE_URL: http://restaurant-api:3000
       NODE_ENV: production
     depends_on:
