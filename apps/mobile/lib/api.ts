@@ -12,7 +12,7 @@ import type {
   Restaurant,
 } from './types';
 
-const API_BASE_URL = process.env.EXPO_PUBLIC_API_URL ?? 'http://localhost:3000';
+const API_BASE_URL = (process.env.EXPO_PUBLIC_API_BASE_URL ?? 'https://ehjoz.app/api').replace(/\/+$/, '');
 
 type RequestOptions = {
   accessToken?: string;
@@ -30,6 +30,30 @@ export class ApiError extends Error {
   }
 }
 
+function getErrorMessage(data: unknown, fallback: string) {
+  if (data && typeof data === 'object' && 'message' in data) {
+    const message = (data as { message?: unknown }).message;
+
+    if (typeof message === 'string' && message.trim()) {
+      return message;
+    }
+
+    if (Array.isArray(message)) {
+      const messages = message.filter((item): item is string => typeof item === 'string' && item.trim());
+
+      if (messages.length > 0) {
+        return messages.join('\n');
+      }
+    }
+  }
+
+  if (typeof data === 'string' && data.trim()) {
+    return data;
+  }
+
+  return fallback;
+}
+
 async function request<T>(path: string, options: RequestOptions = {}): Promise<T> {
   const headers: Record<string, string> = {
     Accept: 'application/json',
@@ -43,24 +67,34 @@ async function request<T>(path: string, options: RequestOptions = {}): Promise<T
     headers.Authorization = `Bearer ${options.accessToken}`;
   }
 
-  const response = await fetch(`${API_BASE_URL}${path}`, {
-    method: options.method ?? 'GET',
-    headers,
-    body: options.body === undefined ? undefined : JSON.stringify(options.body),
-  });
+  let response: Response;
+
+  try {
+    response = await fetch(`${API_BASE_URL}${path}`, {
+      method: options.method ?? 'GET',
+      headers,
+      body: options.body === undefined ? undefined : JSON.stringify(options.body),
+    });
+  } catch {
+    throw new ApiError(
+      'تعذر الوصول إلى الخادم. تحقق من اتصال الإنترنت أو حاول مرة أخرى بعد قليل.',
+      0
+    );
+  }
 
   const text = await response.text();
-  const data = text ? JSON.parse(text) : undefined;
+  let data: unknown;
+
+  if (text) {
+    try {
+      data = JSON.parse(text);
+    } catch {
+      data = text;
+    }
+  }
 
   if (!response.ok) {
-    const message =
-      typeof data?.message === 'string'
-        ? data.message
-        : Array.isArray(data?.message)
-          ? data.message.join('\n')
-          : 'تعذر الاتصال بالخادم';
-
-    throw new ApiError(message, response.status);
+    throw new ApiError(getErrorMessage(data, 'تعذر إكمال الطلب حالياً.'), response.status);
   }
 
   return data as T;

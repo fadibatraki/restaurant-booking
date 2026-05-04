@@ -134,6 +134,20 @@ export default function RestaurantScreen() {
     loadRestaurant();
   }, [loadRestaurant]);
 
+  useEffect(() => {
+    if (!selectedTableId) {
+      return;
+    }
+
+    const selectedTableStillAvailable = tables.some(
+      (table) => table.id === selectedTableId && table.isAvailable && table.isActive
+    );
+
+    if (!selectedTableStillAvailable) {
+      setSelectedTableId(null);
+    }
+  }, [selectedTableId, tables]);
+
   function getReservationDateOrShowError() {
     const reservationDate = buildReservationDate(dateValue.trim(), timeValue.trim());
 
@@ -151,7 +165,7 @@ export default function RestaurantScreen() {
   }
 
   async function handleCheckAvailability() {
-    if (!restaurantId) {
+    if (!restaurantId || isChecking) {
       return;
     }
 
@@ -191,7 +205,7 @@ export default function RestaurantScreen() {
   }
 
   async function handleCreateReservation() {
-    if (!restaurantId) {
+    if (!restaurantId || isSubmitting) {
       return;
     }
 
