@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
     }
 
     try {
-        const response = await fetch(new URL("/auth/login", apiBaseUrl), {
+        const response = await fetch(`${apiBaseUrl.replace(/\/$/, "")}/auth/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
