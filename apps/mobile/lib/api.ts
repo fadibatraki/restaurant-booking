@@ -13,6 +13,7 @@ import type {
 } from './types';
 
 const API_BASE_URL = (process.env.EXPO_PUBLIC_API_BASE_URL ?? 'https://ehjoz.app/api').replace(/\/+$/, '');
+const JSON_CONTENT_TYPE_PATTERN = /\bjson\b/i;
 
 type RequestOptions = {
   accessToken?: string;
@@ -30,6 +31,18 @@ export class ApiError extends Error {
   }
 }
 
+function buildApiUrl(path: string) {
+  if (!path.startsWith('/')) {
+    throw new ApiError('مسار طلب API غير صحيح.', 0);
+  }
+
+  return `${API_BASE_URL}${path}`;
+}
+
+function isJsonResponse(response: Response) {
+  return JSON_CONTENT_TYPE_PATTERN.test(response.headers.get('content-type') ?? '');
+}
+
 function getErrorMessage(data: unknown, fallback: string) {
   if (data && typeof data === 'object' && 'message' in data) {
     const message = (data as { message?: unknown }).message;
@@ -45,10 +58,6 @@ function getErrorMessage(data: unknown, fallback: string) {
         return messages.join('\n');
       }
     }
-  }
-
-  if (typeof data === 'string' && data.trim()) {
-    return data;
   }
 
   return fallback;
@@ -70,7 +79,7 @@ async function request<T>(path: string, options: RequestOptions = {}): Promise<T
   let response: Response;
 
   try {
-    response = await fetch(`${API_BASE_URL}${path}`, {
+    response = await fetch(buildApiUrl(path), {
       method: options.method ?? 'GET',
       headers,
       body: options.body === undefined ? undefined : JSON.stringify(options.body),
@@ -82,15 +91,20 @@ async function request<T>(path: string, options: RequestOptions = {}): Promise<T
     );
   }
 
-  const text = await response.text();
   let data: unknown;
 
-  if (text) {
+  if (isJsonResponse(response)) {
+    const text = await response.text();
+
     try {
-      data = JSON.parse(text);
+      data = text ? JSON.parse(text) : undefined;
     } catch {
-      data = text;
+      throw new ApiError('استجابة الخادم غير صالحة. حاول مرة أخرى بعد قليل.', response.status);
     }
+  } else if (!response.ok) {
+    throw new ApiError('تعذر الوصول إلى خدمة API. تحقق من رابط الخادم وحاول مرة أخرى.', response.status);
+  } else {
+    throw new ApiError('استجابة غير متوقعة من الخادم.', response.status);
   }
 
   if (!response.ok) {
