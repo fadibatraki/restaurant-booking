@@ -1,10 +1,13 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 const authCookieName = "restaurant_booking_access_token";
 
-export async function POST(request: NextRequest) {
-  const response = NextResponse.redirect(new URL("/login", request.url), {
+export async function POST() {
+  const response = new NextResponse(null, {
     status: 303,
+    headers: {
+      Location: "/login",
+    },
   });
 
   response.cookies.set({
